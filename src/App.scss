@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.navBar {
+    background-color:rgb(21, 56 , 78) ;
+    
+
+    ul{
+        display: flex;
+
+    li{
+        list-style: none;
+        flex-direction: row;
+        margin: auto;
+        padding: auto;
+        
+        a{
+            text-decoration: none;
+            color: white;
+            
+        }
+        ul{
+            flex-direction: column;
+            display: none;
+            li {
+                
+            }
+        }    
+    }
+    }
+}
