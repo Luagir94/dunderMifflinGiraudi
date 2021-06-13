@@ -3,36 +3,41 @@
   padding: 0;
 }
 
-.navBar {
+#logoNav {
+  width: 80px;
+}
+
+#navBar {
   background-color: #15384e;
 }
 
-.navBar ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.linkNav {
+  color: white !important;
 }
 
-.navBar ul li {
-  list-style: none;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  margin: auto;
-  padding: auto;
+.linkNav:hover {
+  color: white;
+  -webkit-text-stroke: 0.5px black;
 }
 
-.navBar ul li a {
-  text-decoration: none;
+#navDrop {
   color: white;
 }
 
-.navBar ul li ul {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  display: none;
+#navDrop:hover {
+  color: white;
+  -webkit-text-stroke: 0.5px black;
+}
+
+#shopCart {
+  width: 30px;
+  border-color: white;
+}
+
+.buttonCart {
+  background-color: transparent;
+  border-style: none;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 /*# sourceMappingURL=app.css.map */

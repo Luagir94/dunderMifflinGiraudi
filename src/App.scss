@@ -3,31 +3,40 @@
     padding: 0;
 }
 
-.navBar {
+#logoNav{
+    width: 80px;
+}
+
+#navBar {
     background-color:rgb(21, 56 , 78) ;
+   
+
+   
+}
+.linkNav{
+    color: white !important; 
+}
+
+.linkNav:hover{
+    color: white; 
+    -webkit-text-stroke: 0.5px black
+}
+#navDrop{ 
+    color: white;
+}
+#navDrop:hover{
+    color: white; 
+    -webkit-text-stroke: 0.5px black
+}
+
+#shopCart {
+    width: 30px;
+    border-color: white;
     
-
-    ul{
-        display: flex;
-
-    li{
-        list-style: none;
-        flex-direction: row;
-        margin: auto;
-        padding: auto;
-        
-        a{
-            text-decoration: none;
-            color: white;
-            
-        }
-        ul{
-            flex-direction: column;
-            display: none;
-            li {
-                
-            }
-        }    
-    }
-    }
+}
+.buttonCart{
+    background-color:transparent;
+    border-style: none;
+    margin-left: 50px;
+    margin-right: 50px;
 }
