@@ -20,8 +20,6 @@ function App() {
       </header>
 
       <ItemListConteiner datos={Datos}/>
-      <ItemListConteiner datos={Datos}/>
-      <ItemListConteiner datos={Datos}/>
   
       
     </div> 
