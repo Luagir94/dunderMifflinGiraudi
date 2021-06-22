@@ -40,4 +40,12 @@
   margin-left: 50px;
   margin-right: 50px;
 }
-/*# sourceMappingURL=app.css.map */
+
+#counter {
+  margin-left: 35px;
+}
+
+.buttonCount {
+  margin: 0 10px 0 10px;
+}
+/*# sourceMappingURL=App.css.map */

@@ -2,15 +2,11 @@ import './App.css';
 import React from 'react';
 import NavBar from './Components/NavBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ItemListConteiner from './Components/ItemListConteiner';
+import ProductGrid from './Components/ProductGrid';
+import ItemList from './Components/ItemList'
 
 
 
-const Datos = {
-  Nombre: 'Resma Autor',
-  Imagen : 'https://d3ugyf2ht6aenh.cloudfront.net/stores/655/318/products/10110121-4bd295f637cb6edc6e15217377951954-640-0.png',
-  Precio : 10
-}
 
 function App() {
   return (
@@ -19,7 +15,7 @@ function App() {
       <header className="App-header">
       </header>
 
-      <ItemListConteiner datos={Datos}/>
+      <ItemList/>
   
       
     </div> 

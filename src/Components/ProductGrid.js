@@ -13,10 +13,8 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
-import ItemCount from './ItemCount';
-import DATA from './Item';
-import CardActionArea from '@material-ui/core/CardActionArea';
-
+import { ItemList } from './ItemList';
+import ItemListConteiner from './ItemListConteiner'
 
 function Copyright() {
   return (
@@ -33,7 +31,7 @@ function Copyright() {
 
 const useStyles = makeStyles((theme) => ({
   icon: {
-    marginRight: theme.spacing(5),
+    marginRight: theme.spacing(2),
   },
   heroContent: {
     backgroundColor: theme.palette.background.paper,
@@ -49,53 +47,51 @@ const useStyles = makeStyles((theme) => ({
   card: {
     height: '100%',
     display: 'flex',
-    width: '100%',
     flexDirection: 'column',
   },
   cardMedia: {
-    paddingTop: '100%', // 16:9
+    paddingTop: '56.25%', // 16:9
   },
   cardContent: {
     flexGrow: 1,
   },
+  footer: {
+    backgroundColor: theme.palette.background.paper,
+    padding: theme.spacing(6),
+  },
 }));
 
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-const datos = DATA
 
-
-export default function Album() {
+function ProductGrid() {
   const classes = useStyles();
 
-  return (datos.map((producto)=>(
-    <>
-    <Card className={classes.root}>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          alt={producto.nombre}
-          height="200"
-          width="200"
-          image={producto.foto}
-          title={producto.nombre}
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            {producto.nombre}
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            {producto.descripcion}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      
-    </Card>
-
-    <ItemCount/>
-    </>
-  )
-    
-  )
+  return (
+    <React.Fragment>
+      <CssBaseline />
+      <main>
+        <Container className={classes.cardGrid} maxWidth="md">
+          <Grid container spacing={4}>
+            {cards.map((card) => (
+              <Grid item key={card} xs={12} sm={6} md={4}>
+                <ItemListConteiner/>
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
+      </main>
+      {/* Footer */}
+      <footer className={classes.footer}>
+        <Typography variant="h6" align="center" gutterBottom>
+          Footer
+        </Typography>
+        <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
+          Something here to give the footer a purpose!
+        </Typography>
+        <Copyright />
+      </footer>
+      {/* End footer */}
+    </React.Fragment>
   );
 }
-
+export default ProductGrid
