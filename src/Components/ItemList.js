@@ -10,7 +10,7 @@ const promiseProductos =() => {
     return new Promise((resolve, reject) => {
         setTimeout(
             (() =>
-                resolve( datos.map(productos => productos)
+                resolve( datos.map(productos => productos.disponibilidad)
 
                 ),3000
                 )
@@ -25,7 +25,7 @@ export const ItemList = () => {
 
     const ejecutarPromise = () => {
         promiseProductos().then((data) => {
-            const filtroProducts = data.filter((product) => product.disponibilidad);
+            const filtroProducts = data.filter((product) => product.disponibilidad == true);
             setProductos=(filtroProducts)}
 
         )
@@ -35,11 +35,9 @@ export const ItemList = () => {
     },[])
     return(<>
         {
-            productos.lenght === 0 ? (<Spinner animation="border" role="status">
+            productos.length === 0 ? (<Spinner animation="border" role="status">
             <span className="sr-only">Cargando...</span>
-        </Spinner>
-
-            ) : (<ProductGrid/>)
+        </Spinner> ) : (<ProductGrid/>)
         }
         </>
     )

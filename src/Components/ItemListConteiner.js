@@ -18,18 +18,6 @@ import DATA from './Item';
 import CardActionArea from '@material-ui/core/CardActionArea';
 
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -69,13 +57,12 @@ export default function Album() {
 
   return (datos.map((producto)=>(
     <>
-    <Card className={classes.root}>
+    <Card className={classes.root} key={producto.id}>
       <CardActionArea>
         <CardMedia
           component="img"
           alt={producto.nombre}
           height="200"
-          width="200"
           image={producto.foto}
           title={producto.nombre}
         />
