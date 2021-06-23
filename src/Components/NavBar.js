@@ -27,7 +27,6 @@ function NavBar(){
       </NavDropdown>
       <Nav.Link href="#link" className="linkNav">Nosotros</Nav.Link>
       <Nav.Link href="#link" className="linkNav">Contacto</Nav.Link>
-     
     </Navbar>
     <Form inline>
       <FormControl type="text" placeholder="Buscar..." className="mr-sm-2" />
