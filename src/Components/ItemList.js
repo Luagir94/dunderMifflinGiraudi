@@ -9,20 +9,11 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const datos = DATA
 
-console.log(DATA)
-const promiseProductos =() => {
-    return Promise.reject('Error al cargar la página')
-    return new Promise((resolve, reject) => {
-        setTimeout(
-            (() =>
-                resolve(DATA
 
-                ),3000
-                )
-        )
-    }
-    )
-}
+
+    
+    
+
 const useStyles = makeStyles((theme) => ({
     backdrop: {
       zIndex: theme.zIndex.drawer + 1,
@@ -44,21 +35,33 @@ const ItemList = () => {
       
   const classes = useStyles();
 
-    const ejecutarPromise = () => {
-        promiseProductos().then((data) => {
-            const filtroProducts = data.filter((product) => product.disponibilidad === true);
-            setProductos=(filtroProducts)}
+  
+    useEffect(()=>{
+        console.log('se ejecuto')
+        new Promise((resolve) => {
+            setTimeout(
+                () =>
+                    resolve(DATA),3000
+                    
+            )
+        }).then(
+            function(DATA) {
+            console.log('oo',DATA)
+            const filtroProducts = DATA.filter((product) => product.disponibilidad === true);
+            setProductos(filtroProducts)
+            console.log('oo',productos)
+            
+        }
 
         )
-    }
-    useEffect(()=>{
-        ejecutarPromise();
+        
     },[])
     return(<>
+    {console.log('works', productos)}
         {
-            productos.length === 0 ? (<Backdrop className={classes.backdrop} open >
+            productos.length==0 ? (<Backdrop className={classes.backdrop} open >
                 <CircularProgress color="inherit" />
-              </Backdrop>) : (<ProductGrid/>)
+            </Backdrop>) : (<ProductGrid/>)
         }
         </>
     )

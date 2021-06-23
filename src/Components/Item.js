@@ -17,7 +17,7 @@ const DATA= [
         id: 2,
         destacado: false,
         stock: 100,
-        disponibilidad: false,
+        disponibilidad: true,
         descripcion: 'Resma x200 Hojas'
     },
     {
