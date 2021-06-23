@@ -23,16 +23,16 @@ const ItemCount = () => {
     const datos = DATA
     const classes = useStyles();
     const [count, setCount] = useState(0)
-    const [cantidadStock, setCantidadStock] = useState(datos.map(productos => productos.stock))
+    
     
 
     
-return(
+return (datos.map((productos) => (
     <div className={classes.root} > 
     <div id='counter'>
         <span className='buttonCount'>
         <Button variant="outlined" color="primary"  onClick={ () => {
-            if (cantidadStock > 1 &&  count < cantidadStock) {setCount(count+1)
+            if (productos.stock > 1 &&  count < productos.stock) {setCount(count+1)
                 
             }
         else {
@@ -57,7 +57,8 @@ return(
     
 
 )
-
+)
+)
 }
 
 
