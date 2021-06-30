@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
 import CameraIcon from '@material-ui/icons/PhotoCamera';
@@ -14,7 +14,10 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
 import { ItemList } from './ItemList';
-import ItemListConteiner from './ItemListConteiner'
+import ItemListConteiner from './ItemListConteiner';
+import DATA from './Item';
+import Backdrop from '@material-ui/core/Backdrop';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 function Copyright() {
   return (
@@ -45,9 +48,10 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(8),
   },
   card: {
-    height: '100%',
+    height: '120%',
     display: 'flex',
     flexDirection: 'column',
+    backgroundColor:'red,'
   },
   cardMedia: {
     paddingTop: '56.25%', // 16:9
@@ -55,34 +59,68 @@ const useStyles = makeStyles((theme) => ({
   cardContent: {
     flexGrow: 1,
   },
-  footer: {
-    backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(6),
-  },
 }));
 
-const cards = [1, 2, 3,];
+
 
 function ProductGrid() {
+  const [error, setError] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [items, setItems] = useState([]);
+
+  const useStyles = makeStyles((theme) => ({
+    backdrop: {
+      zIndex: theme.zIndex.drawer + 1,
+      color: '#fff',
+    },
+  }));
+    
   const classes = useStyles();
 
-  return (
-    <React.Fragment>
-      <CssBaseline />
+
+
+
+  useEffect(() => {
+  fetch("https://60dc604ec2b6280017feb95c.mockapi.io/articles")
+      .then(res => res.json())
+      .then(
+        (result) => {
+          setIsLoaded(true);
+          setItems(result);
+        },
+        (error) => {
+          setIsLoaded(true);
+          setError(error);
+        }
+      )
+  }, [])
+
+  if (!isLoaded) {
+    return(<Backdrop className={classes.backdrop} open >
+      <CircularProgress color="inherit" />
+  </Backdrop>)
+  } else {
+    return (
       <main>
-        <Container className={classes.cardGrid} maxWidth="md">
-          <Grid container spacing={4}>
-            {cards.map((card) => (
-              <Grid item key={card} xs={12} sm={6} md={4}>
-                <ItemListConteiner/>
-              </Grid>
+        <Container  maxWidth="md">
+          <Grid container spacing={0}>
+            {items.map((data) => (
+              <Grid item key={data.id} xs={12} sm={6} md={4}>
+                <ItemListConteiner name={data.name} img={data.img} id={data.id}
+                stock={data.stock} description={data.descripcion} price={data.precio}/>
+              </Grid> 
             ))}
           </Grid>
         </Container>
       </main>
-      {/* Footer */}
+    );
+  }
+
+  /*return (
+    
       
-    </React.Fragment>
-  );
+      
+
+  )*/
 }
 export default ProductGrid

@@ -42,7 +42,8 @@
 }
 
 #counter {
-  margin-left: 35px;
+  margin-left: 1rem;
+  margin-top: 1.5rem;
 }
 
 .buttonCount {
@@ -51,5 +52,31 @@
 
 .imagenTarjeta {
   width: 50px;
+}
+
+.cardImg {
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+  margin: 20px 50px 20px 50px;
+  padding: -50px;
+}
+
+.contenidoCard {
+  padding-left: 1rem;
+  margin-top: 0.5rem;
+}
+
+.contenidoCard h2 {
+  font-size: 23px;
+  word-wrap: initial;
+}
+
+.contenidoCard h5 {
+  font-size: 13px;
+}
+
+.contenidoCard h6 {
+  font-size: 18px;
 }
 /*# sourceMappingURL=App.css.map */

@@ -3,6 +3,7 @@
     padding: 0;
 }
 
+
 #logoNav{
     width: 80px;
 }
@@ -41,11 +42,37 @@
     margin-right: 50px;
 }
 #counter{
-    margin-left: 35px;
+    margin-left: 1rem;
+    margin-top: 1.5rem;
 }
 .buttonCount{
     margin: 0 10px 0 10px;
 }
 .imagenTarjeta{
     width: 50px;
+}
+
+.cardImg{
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+    margin: 20px 50px 20px 50px;
+    padding: -50px;
+}
+
+.contenidoCard{
+    padding-left: 1rem;
+    margin-top: 0.5rem;
+    
+    h2{
+        font-size: 23px;
+        word-wrap:initial
+    }
+    h5{
+        font-size: 13px;
+    }
+    h6{
+        font-size: 18px;
+    }
+
 }

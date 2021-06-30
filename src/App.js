@@ -15,7 +15,7 @@ function App() {
       <header className="App-header">
       </header>
 
-      <ItemList/>
+      <ProductGrid/>
   
       
     </div> 

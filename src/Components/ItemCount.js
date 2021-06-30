@@ -19,20 +19,19 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const ItemCount = () => {
-    const datos = DATA
+const ItemCount = ({stock,initialValue,onAdd}) => {
     const classes = useStyles();
     const [count, setCount] = useState(0)
     
     
 
     
-return (datos.map((productos) => (
+return (
     <div className={classes.root} > 
     <div id='counter'>
         <span className='buttonCount'>
         <Button variant="outlined" color="primary"  onClick={ () => {
-            if (productos.stock > 1 &&  count < productos.stock) {setCount(count+1)
+            if (stock > 1 &&  count < stock) {setCount(count+1)
                 
             }
         else {
@@ -40,14 +39,12 @@ return (datos.map((productos) => (
         }
         }}> + </Button>
         </span>
-         <span > {count}</span>
-         <span className='buttonCount'>
+        <span >{count}</span>
+        <span className='buttonCount'>
         <Button variant="outlined" color="primary" className='buttonCount' onClick={ () => {count > 0 && setCount(count - 1)}}> - </Button>
         </span>
 
-        <IconButton color="primary" aria-label="Agregar al Carrito" onClick={
-            () => alert('Usted agregó '+ count + ' al carrito.')
-        }>
+        <IconButton color="primary" aria-label="Agregar al Carrito" onClick={() => onAdd(count)}>
         
         <AddShoppingCartIcon/>
         </IconButton>
@@ -56,8 +53,6 @@ return (datos.map((productos) => (
     </div>
     
 
-)
-)
 )
 }
 
