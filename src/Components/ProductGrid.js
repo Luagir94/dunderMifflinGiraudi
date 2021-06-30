@@ -13,9 +13,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
-import { ItemList } from './ItemList';
 import ItemListConteiner from './ItemListConteiner';
-import DATA from './Item';
 import Backdrop from '@material-ui/core/Backdrop';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
@@ -87,10 +85,6 @@ function ProductGrid() {
         (result) => {
           setIsLoaded(true);
           setItems(result);
-        },
-        (error) => {
-          setIsLoaded(true);
-          setError(error);
         }
       )
   }, [])

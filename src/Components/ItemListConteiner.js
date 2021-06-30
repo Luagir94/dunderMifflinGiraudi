@@ -1,15 +1,12 @@
 import React from 'react';
-import ItemCount from './ItemCount';
-import DATA from './Item';
 import { BorderColor } from '@material-ui/icons';
-
+import ItemcCount from './ItemCount';
 
 
 
 
 
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-const datos = DATA
 
 const divStyle ={
   border: 'solid 1px',
