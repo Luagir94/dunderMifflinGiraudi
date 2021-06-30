@@ -6,7 +6,7 @@ import AlarmIcon from '@material-ui/icons/Alarm';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import Button from '@material-ui/core/Button';
 import CartWidget from './CartWidget';
-import DATA from './Item';
+
 
 
 

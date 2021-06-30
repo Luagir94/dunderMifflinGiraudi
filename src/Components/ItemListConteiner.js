@@ -1,6 +1,6 @@
 import React from 'react';
 import { BorderColor } from '@material-ui/icons';
-import ItemcCount from './ItemCount';
+import ItemCount from './ItemCount';
 
 
 
