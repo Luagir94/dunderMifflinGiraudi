@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import { useParams } from 'react-router-dom';
-import ItemDetail from '../Components/ItemDetail';
+import Item from '../Components/Item';
 import Backdrop from '@material-ui/core/Backdrop';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { makeStyles } from '@material-ui/core/styles';
@@ -12,7 +12,7 @@ const divStyle ={
    
   }
 
-export default function ProductDetail(){
+export default function ItemDetail(){
     const {productId} = useParams();
     const [isLoaded, setIsLoaded] = useState(false);
     const [item, setItem] = useState([]);
@@ -43,7 +43,7 @@ export default function ProductDetail(){
       } else {
     return(
         <>      <div style={divStyle}>
-                <ItemDetail name={item.name} img={item.img} id={item.id}
+                <Item name={item.name} img={item.img} id={item.id}
                 stock={item.stock} description={item.descripcion} price={item.precio}/>
                 </div>
         </>

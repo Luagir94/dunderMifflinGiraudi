@@ -2,6 +2,7 @@ import React from 'react'
 
 export default function About(){
     return(
-        <div>nosotros</div>
+        <div>Tienda parodia tributo a The Office
+        </div>
     )
 }

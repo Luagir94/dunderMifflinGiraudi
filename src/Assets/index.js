@@ -1,5 +1,6 @@
 import logo from './logo.jpg';
 import cart from './shopCart.png';
+import errorC from './errorC.png';
 
 
 const IMAGES = {
@@ -12,7 +13,12 @@ const IMAGES = {
         img: cart,
         name :'shopCart',
         id : 'shopCart'
-    }
+    },
+    img3: {
+        img: errorC,
+        name :'errorC',
+        id : 'errorC'
+    },
 }
 
 

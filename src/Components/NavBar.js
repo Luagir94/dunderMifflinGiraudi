@@ -29,7 +29,7 @@ function NavBar(){
       <FormControl type="text" placeholder="Buscar..." className="mr-sm-2" />
       <Button variant="light">Buscar</Button>
     </Form>
-    <CartWidget/>
+    <Link to="/Cart"><CartWidget/></Link>
   </Navbar.Collapse>
 </Navbar>
     )}
