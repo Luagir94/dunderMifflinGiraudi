@@ -17,52 +17,12 @@ import ItemListConteiner from './ItemListConteiner';
 import Backdrop from '@material-ui/core/Backdrop';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
 
-const useStyles = makeStyles((theme) => ({
-  icon: {
-    marginRight: theme.spacing(2),
-  },
-  heroContent: {
-    backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(8, 0, 6),
-  },
-  heroButtons: {
-    marginTop: theme.spacing(4),
-  },
-  cardGrid: {
-    paddingTop: theme.spacing(8),
-    paddingBottom: theme.spacing(8),
-  },
-  card: {
-    height: '120%',
-    display: 'flex',
-    flexDirection: 'column',
-    backgroundColor:'red,'
-  },
-  cardMedia: {
-    paddingTop: '56.25%', // 16:9
-  },
-  cardContent: {
-    flexGrow: 1,
-  },
-}));
+
 
 
 
 function ProductGrid() {
-  const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
 
@@ -75,19 +35,19 @@ function ProductGrid() {
     
   const classes = useStyles();
 
-
+const getProducts = async() =>{
+  const response = await fetch("https://60dc604ec2b6280017feb95c.mockapi.io/articles");
+  const data = await response.json();
+  setItems(data);
+  setIsLoaded(true);
+};
 
 
   useEffect(() => {
-  fetch("https://60dc604ec2b6280017feb95c.mockapi.io/articles")
-      .then(res => res.json())
-      .then(
-        (result) => {
-          setIsLoaded(true);
-          setItems(result);
-        }
-      )
-  }, [])
+    
+    getProducts();
+    
+   }, [])
 
   if (!isLoaded) {
     return(<Backdrop className={classes.backdrop} open >

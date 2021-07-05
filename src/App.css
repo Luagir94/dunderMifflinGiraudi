@@ -15,6 +15,12 @@
   color: white !important;
 }
 
+#basic-navbar-nav a {
+  color: white;
+  font-size: 1rem;
+  margin: 0 1rem 0 1rem;
+}
+
 .linkNav:hover {
   color: white;
   -webkit-text-stroke: 0.5px black;
@@ -54,6 +60,10 @@
   width: 50px;
 }
 
+.cardContent {
+  height: 6rem;
+}
+
 .cardImg {
   width: 200px;
   height: 200px;
@@ -78,5 +88,9 @@
 
 .contenidoCard h6 {
   font-size: 18px;
+}
+
+#card {
+  border: 1px solid black;
 }
 /*# sourceMappingURL=App.css.map */

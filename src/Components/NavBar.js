@@ -8,25 +8,22 @@ import Nav from 'react-bootstrap/Nav';
 import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl';
 import CartWidget from './CartWidget';
+import { NavLink } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+
 
 function NavBar(){
 
     return(
         <Navbar  expand="lg" id='navBar'>
-  <CustomImg {...IMAGES.img1}/>
+  <Link to="/" ><CustomImg {...IMAGES.img1}/></Link>
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
     <Navbar className="mr-auto" >
-      <Nav.Link href="#home" className="linkNav">Home</Nav.Link>
-      <NavDropdown  title="Productos" id="basic-nav-dropdown" id="navDrop" style={{
-          color: 'white'
-      }}>
-        <NavDropdown.Item href="#action/3.1">Resmas</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.2">Articulos de Oficina</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.3">Varios</NavDropdown.Item>
-      </NavDropdown>
-      <Nav.Link href="#link" className="linkNav">Nosotros</Nav.Link>
-      <Nav.Link href="#link" className="linkNav">Contacto</Nav.Link>
+    <Link to="/" className="navLink" activeClassname="activeNavLink">Home</Link>
+    <Link to="/products" className="navLink" activeClassName="activeNavLink">Productos</Link>
+    <Link to="/about" className="navLink" activeClassname="activeNavLink">Nosotros</Link>
+    <Link to="/contact" className="navLink" activeClassName="activeNavLink">Contacto</Link>
     </Navbar>
     <Form inline>
       <FormControl type="text" placeholder="Buscar..." className="mr-sm-2" />

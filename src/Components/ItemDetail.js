@@ -12,31 +12,43 @@ const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 const divStyle ={
   border: 'solid 1px',
   borderColor:'#15384e',
-  marginTop:'2rem',
-  height: '30rem',
-  width: '18rem',
-  margin:'2rem',
+  height: '40vh',
+  width: '75vh',
+  padding:'2rem',
+  
+  margin:'5rem auto 0 auto',
+
  
 }
 const fontStyle={
   color:'#15384e',
-  fontSize:'1.1rem'
 }
 
-export default function ItemListConteiner({name,img,stock,id,price}) {
+const flex ={
+    display:'flex',
+    flexDirection:'row',
+
+
+}
+
+const image={
+    height:'30vh'
+}
+
+export default function ItemDetail({name,img,description,stock,id,price}) {
 
   return (
     <div className='card' style={divStyle}>
-      <div className='cardContent'>
+      <div className='cardContent' style={flex}>
       <div>
-        <img src={img} alt={name} className='cardImg'/>
+        <img src={img} alt={name} className='cardImg' style={image}/>
       </div>
       <div className='contenidoCard'>
         <h2 className='cardTitle' style={fontStyle}>{name}</h2>
-        
+        <h5 style={fontStyle}>{description}</h5>
         <h6 style={fontStyle}> ${price}</h6>
         <ItemCount stock={stock} initialValue={1} onAdd={(count) => alert('Usted agregó '+ count + ' al carrito.')}/>
-        <NavLink to={`/products/${id}`}>Detalle</NavLink>
+        <span style={{textAlign:"left"}}><NavLink to="/products">Volver Atras</NavLink> </span>
       </div>
       
       </div>
