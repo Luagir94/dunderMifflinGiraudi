@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/dunderMifflinGiraudi/static/css/main.3daba8d0.chunk.css",
+    "main.js": "/dunderMifflinGiraudi/static/js/main.d8b95ba4.chunk.js",
+    "main.js.map": "/dunderMifflinGiraudi/static/js/main.d8b95ba4.chunk.js.map",
+    "runtime-main.js": "/dunderMifflinGiraudi/static/js/runtime-main.a7832f6a.js",
+    "runtime-main.js.map": "/dunderMifflinGiraudi/static/js/runtime-main.a7832f6a.js.map",
+    "static/css/2.4c97ca4f.chunk.css": "/dunderMifflinGiraudi/static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.c6de916d.chunk.js": "/dunderMifflinGiraudi/static/js/2.c6de916d.chunk.js",
+    "static/js/2.c6de916d.chunk.js.map": "/dunderMifflinGiraudi/static/js/2.c6de916d.chunk.js.map",
+    "static/js/3.f807fb74.chunk.js": "/dunderMifflinGiraudi/static/js/3.f807fb74.chunk.js",
+    "static/js/3.f807fb74.chunk.js.map": "/dunderMifflinGiraudi/static/js/3.f807fb74.chunk.js.map",
+    "index.html": "/dunderMifflinGiraudi/index.html",
+    "static/css/2.4c97ca4f.chunk.css.map": "/dunderMifflinGiraudi/static/css/2.4c97ca4f.chunk.css.map",
+    "static/css/main.3daba8d0.chunk.css.map": "/dunderMifflinGiraudi/static/css/main.3daba8d0.chunk.css.map",
+    "static/js/2.c6de916d.chunk.js.LICENSE.txt": "/dunderMifflinGiraudi/static/js/2.c6de916d.chunk.js.LICENSE.txt",
+    "static/media/errorC.47771115.png": "/dunderMifflinGiraudi/static/media/errorC.47771115.png",
+    "static/media/logo.2e14b954.jpg": "/dunderMifflinGiraudi/static/media/logo.2e14b954.jpg",
+    "static/media/shopCart.7cfb20d3.png": "/dunderMifflinGiraudi/static/media/shopCart.7cfb20d3.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a7832f6a.js",
+    "static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.c6de916d.chunk.js",
+    "static/css/main.3daba8d0.chunk.css",
+    "static/js/main.d8b95ba4.chunk.js"
+  ]
+}
