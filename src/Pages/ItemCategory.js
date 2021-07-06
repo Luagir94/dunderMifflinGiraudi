@@ -1,4 +1,5 @@
 import React,{useState,useEffect} from 'react';
+import {useParams} from 'react-router-dom'
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
 import CameraIcon from '@material-ui/icons/PhotoCamera';
@@ -23,7 +24,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 
 
 export default function ItemCategory() {
-    const {categoryId} = useParams();
+  const {categoryId} = useParams();
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
 
