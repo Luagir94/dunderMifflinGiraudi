@@ -14,16 +14,29 @@ import { Link } from 'react-router-dom';
 
 function NavBar(){
 
+  const office = "office";
+  const resma ="resma";
+  const misc = "misc";
+
     return(
         <Navbar  expand="lg" id='navBar'>
   <Link to="/" ><CustomImg {...IMAGES.img1}/></Link>
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
     <Navbar className="mr-auto" >
-    <Link to="/" className="navLink" activeClassname="activeNavLink">Home</Link>
-    <Link to="/products" className="navLink" activeClassName="activeNavLink">Productos</Link>
-    <Link to="/about" className="navLink" activeClassname="activeNavLink">Nosotros</Link>
-    <Link to="/contact" className="navLink" activeClassName="activeNavLink">Contacto</Link>
+    <Link to="/" >Home</Link>
+    <ul id='dropDown'>
+      <li><Link to="/products" >Productos</Link>
+        <ul>
+          <li><Link to={`/category/${resma}`} >Resmas</Link></li>
+          <li><Link to={`/category/${office}`}>Art Oficina</Link></li>
+          <li><Link to={`/category/${misc}`} >Misc</Link></li>
+        </ul>
+      </li>
+    </ul>
+    
+    <Link to="/about" >Nosotros</Link>
+    <Link to="/contact" >Contacto</Link>
     </Navbar>
     <Form inline>
       <FormControl type="text" placeholder="Buscar..." className="mr-sm-2" />

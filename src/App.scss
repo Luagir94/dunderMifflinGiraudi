@@ -15,12 +15,22 @@
    
 }
 .linkNav{
-    color: white !important; 
+    color: white ; 
 }
-#basic-navbar-nav a{
+#basic-navbar-nav {a{
     color:white;
     font-size: 1rem;
-    margin: 0 1rem 0 1rem;
+    margin: 0 1rem 0 1rem;}
+    div{
+        div{
+           display: flex;
+           flex-direction: column;
+            a{color: rgb(21, 56 , 78)}
+            a:hover{
+                overflow: hidden;
+            }
+        }
+    }
 }
 
 .linkNav:hover{
@@ -84,6 +94,29 @@
     }
 
 }
-#card{
+.card{
     border:1px solid black
 }
+#dropDown{
+    list-style: none;
+    margin-top: 1rem;
+    ul{
+    position: absolute;
+    display: none;
+    list-style: none;
+    background-color: rgb(21, 56 , 78);
+    border: solid 1px black;
+    
+    border-radius: 1em 1em 1em 1em;
+    height: 7rem;
+    li{
+        margin: 1vh 0 1vh 0;
+    }
+    
+}
+li:hover{
+    ul{display: block;
+        ;}
+}
+}
+  

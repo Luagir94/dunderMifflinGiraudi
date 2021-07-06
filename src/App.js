@@ -18,6 +18,7 @@ import About from "./Pages/About";
 import Cart from "./Pages/Cart";
 import Error404 from "./Pages/Error404";
 import ItemDetail from "./Pages/ItemDetail";
+import ItemCategory from "./Pages/ItemCategory"
 
 
 
@@ -30,6 +31,7 @@ function App() {
           <Route  exact path="/" component={Home}/>
           <Route  exact path="/products" component={Products}/>
           <Route  exact path="/products/:productId" component={ItemDetail}/>
+          <Route  exact path="/category/:categoryId" component={ItemCategory}/>
           <Route  exact path="/about" component={About}/>
           <Route  exact path="/contact" component={Contact}/>
           <Route  exact path="/cart" component={Cart}/>

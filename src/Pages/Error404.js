@@ -5,7 +5,7 @@ const flex ={
     display:'flex',
     flexDirection:'row',
    margin:'20vh auto 10vh auto ',
-   textAlign: 'center'
+   textAlign: 'center',
 
 
 }
