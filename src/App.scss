@@ -11,6 +11,9 @@
 #navBar {
     background-color:rgb(21, 56 , 78) ;
     margin-bottom: 3.5rem;
+    display: flex;
+    flex-direction: row;
+
    
 
    
@@ -21,17 +24,21 @@
 #basic-navbar-nav {a{
     color:white;
     font-size: 1rem;
-    margin: 0 1rem 0 1rem;}
-    div{
-        div{
-           display: flex;
-           flex-direction: column;
-            a{color: rgb(21, 56 , 78)}
-            a:hover{
-                overflow: hidden;
-            }
-        }
+    margin: 0 1rem 0 1rem;
+    text-decoration: none}
+    .dropdown-menu{background-color:rgb(21, 56 , 78);
+        width: 11rem;
+    a{
+        margin: auto;
+        text-decoration: none
     }
+    a:hover{background-color: grey;
+            width: auto;
+        text-decoration: none;}}
+    .btn-outline-success{
+                color: white;
+                border-color: white;
+            }
 }
 
 .linkNav:hover{

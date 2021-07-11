@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { BorderColor } from '@material-ui/icons';
 import ItemCount from './ItemCount';
 import { NavLink } from 'react-router-dom';
@@ -23,7 +23,9 @@ const fontStyle={
   fontSize:'1.1rem'
 }
 
+
 export default function ItemListConteiner({name,img,stock,id,price}) {
+  
 
   return (
     <div className='card' style={divStyle}>

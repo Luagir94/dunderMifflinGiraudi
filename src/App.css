@@ -10,6 +10,13 @@
 #navBar {
   background-color: #15384e;
   margin-bottom: 3.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 .linkNav {
@@ -20,24 +27,28 @@
   color: white;
   font-size: 1rem;
   margin: 0 1rem 0 1rem;
+  text-decoration: none;
 }
 
-#basic-navbar-nav div div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+#basic-navbar-nav .dropdown-menu {
+  background-color: #15384e;
+  width: 11rem;
 }
 
-#basic-navbar-nav div div a {
-  color: #15384e;
+#basic-navbar-nav .dropdown-menu a {
+  margin: auto;
+  text-decoration: none;
 }
 
-#basic-navbar-nav div div a:hover {
-  overflow: hidden;
+#basic-navbar-nav .dropdown-menu a:hover {
+  background-color: grey;
+  width: auto;
+  text-decoration: none;
+}
+
+#basic-navbar-nav .btn-outline-success {
+  color: white;
+  border-color: white;
 }
 
 .linkNav:hover {

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
@@ -19,7 +19,19 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const ItemCount = ({stock,initialValue,onAdd}) => {
+export function OnAdd() {
+    const [productosComprados, setProductosComprados] = useState([])
+    setProductosComprados(ItemCount)
+
+    return(<Button variant="outlined" color="primary" className='buttonCount'> Finalizar Compra </Button>
+
+    )
+    
+}
+
+
+
+export default function ItemCount ({stock,initialValue,onAdd}) {
     const classes = useStyles();
     const [count, setCount] = useState(0)
     
@@ -57,4 +69,3 @@ return (
 }
 
 
-export default ItemCount
