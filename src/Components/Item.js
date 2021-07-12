@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { BorderColor } from '@material-ui/icons';
 import ItemCount from './ItemCount';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
 
 
 
@@ -35,7 +36,8 @@ const image={
     height:'30vh'
 }
 
-export default function ItemDetail({name,img,description,stock,id,price}) {
+export default function Item({name,img,description,stock,id,price}) {
+  const [quantityToAdd, setQuantityToAdd] = useState(false)
 
   return (
     <div className='card' style={divStyle}>
@@ -47,13 +49,32 @@ export default function ItemDetail({name,img,description,stock,id,price}) {
         <h2 className='cardTitle' style={fontStyle}>{name}</h2>
         <h5 style={fontStyle}>{description}</h5>
         <h6 style={fontStyle}> ${price}</h6>
-        <ItemCount stock={stock} initialValue={1} onAdd={(count) => alert('Usted agregó '+ count + ' al carrito.')}/>
-        <span style={{textAlign:"left"}}><NavLink to="/products">Volver Atras</NavLink> </span>
+        {quantityToAdd === true ? (
+                <Link to="/cart">
+                  <Button type="primary"  variant="outlined" color="primary" className='buttonCount'>Ir al Carrito</Button>
+                </Link>
+              ) : (
+                <ItemCount
+                  stock={stock}
+                  initial={1}
+                  onAdd={(count) => {
+                    setQuantityToAdd(true);
+                    alert(`Se agregaron ${count} items`);
+                  }}
+                />
+              )}
+        <Button type="primary"  variant="outlined" color="primary" className='buttonCount'><Link to="/products">Volver Atras</Link></Button>      
       </div>
       
       </div>
     </div>
   )
+  
 
+  
 }
+
+  
+
+
 
