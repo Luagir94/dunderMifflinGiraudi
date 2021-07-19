@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState,useEffect,useContext} from 'react';
 import {useParams} from 'react-router-dom'
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
@@ -27,7 +27,6 @@ export default function ItemCategory() {
   const {categoryId} = useParams();
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
-
   const useStyles = makeStyles((theme) => ({
     backdrop: {
       zIndex: theme.zIndex.drawer + 1,

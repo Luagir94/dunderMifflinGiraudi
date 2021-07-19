@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState,useEffect,useContext} from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
 import CameraIcon from '@material-ui/icons/PhotoCamera';
@@ -22,10 +22,11 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 
 
 
+
 export default function Products() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
-
+  
   const useStyles = makeStyles((theme) => ({
     backdrop: {
       zIndex: theme.zIndex.drawer + 1,

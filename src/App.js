@@ -1,5 +1,5 @@
 import './App.css';
-import React from 'react';
+import React, { useState } from 'react';
 import NavBar from './Components/NavBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
@@ -21,9 +21,14 @@ import ItemDetail from "./Pages/ItemDetail";
 import ItemCategory from "./Pages/ItemCategory"
 
 
+//Context 
+import {CartProvider} from "./Contexts/CartContext"
+
 
 function App() {
+
   return (
+    <CartProvider>
     <div className="App">
       <Router>
         <NavBar/>
@@ -42,6 +47,7 @@ function App() {
       </header>
       
     </div> 
+    </CartProvider>
   )
 }
 
