@@ -3,7 +3,7 @@ import { BorderColor } from '@material-ui/icons';
 import ItemCount from './ItemCount';
 import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
-import CartContext from "../Contexts/CartContext"                                                                                                                                             
+import {CartContext} from "../Contexts/CartContext"
 
 
 
@@ -37,8 +37,18 @@ const image={
 }
 
 export default function Item({name,img,description,stock,id,price}) {
-  const {cartItems,addToCart} = useContext(CartContext)
-  
+  const [quantityToAdd, setQuantityToAdd] = useState(undefined)
+  const Cart = useContext(CartContext)
+  const objetoCarrito = (id, name, quantity, price) => {
+        const carrito ={
+          id:id,
+          name:name,
+          quantity:quantity,
+          price:price,
+        };
+        Cart.setCartList([...Cart.cartList,carrito]);
+        
+  };
 
   return (
     <div className='card' style={divStyle}>
@@ -50,12 +60,23 @@ export default function Item({name,img,description,stock,id,price}) {
         <h2 className='cardTitle' style={fontStyle}>{name}</h2>
         <h5 style={fontStyle}>{description}</h5>
         <h6 style={fontStyle}> ${price}</h6>
+        {quantityToAdd === true ? (
+                <Link to="/cart">
+                  <Button type="primary"  variant="outlined" color="primary" className='buttonCount' onClick={()=>{
+                    objetoCarrito(id,name,quantityToAdd,price);
+                    console.log(Item.name)
+                  }}>Ir al Carrito</Button>
+                </Link>
+              ) : (
                 <ItemCount
                   stock={stock}
                   initial={1}
-                  onAdd={addToCart}
+                  onAdd={(count) => {
+                    setQuantityToAdd(count);
+                    alert(`Se agregaron ${count} items`);
+                  }}
                 />
-              
+              )}
         <Button type="primary"  variant="outlined" color="primary" className='buttonCount'><Link to="/products">Volver Atras</Link></Button>      
       </div>
       

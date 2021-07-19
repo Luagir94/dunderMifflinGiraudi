@@ -1,9 +1,9 @@
-import React,{useState, useContext} from 'react';
+import React,{useState} from 'react';
 import { BorderColor } from '@material-ui/icons';
 import ItemCount from './ItemCount';
 import {Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
-import CartContext from "../Contexts/CartContext"   
+
 
 
 
@@ -31,7 +31,7 @@ const buttonStyle={
 
 export default function ItemListConteiner({name,img,stock,id,price}) {
   const [quantityToAdd, setQuantityToAdd] = useState(false)
-  const {cartItems,addToCart} = useContext(CartContext)
+
   return (
     <div className='card' style={divStyle}>
       <div className='cardContent'>
@@ -42,12 +42,20 @@ export default function ItemListConteiner({name,img,stock,id,price}) {
         <h2 className='cardTitle' style={fontStyle}>{name}</h2>
         
         <h6 style={fontStyle}> ${price}</h6>
-        <ItemCount
+        {quantityToAdd === true ? (
+                <Link to="/cart">
+                  <Button type="primary"  variant="outlined" color="primary" className='buttonCount'>Ir al Carrito</Button>
+                </Link>
+              ) : (
+                <ItemCount
                   stock={stock}
                   initial={1}
-                  onAdd={addToCart}
+                  onAdd={(count) => {
+                    setQuantityToAdd(true);
+                    alert(`Se agregaron ${count} items`);
+                  }}
                 />
-              
+              )}
         
         <Button type="primary"  variant="outlined" color="primary" className='buttonCount' style={buttonStyle}><Link to="/products"><Link to={`/products/${id}`}>Detalle</Link></Link></Button>
       </div>

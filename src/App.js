@@ -22,13 +22,13 @@ import ItemCategory from "./Pages/ItemCategory"
 
 
 //Context 
-import {CartProvider} from "./Contexts/CartContext"
+import {CartContext} from "./Contexts/CartContext"
 
 
 function App() {
-
+  const [cartList, setCartList] = useState([])
   return (
-    <CartProvider>
+    <CartContext.Provider value={{cartList,setCartList}}>
     <div className="App">
       <Router>
         <NavBar/>
@@ -47,7 +47,7 @@ function App() {
       </header>
       
     </div> 
-    </CartProvider>
+    </CartContext.Provider>
   )
 }
 
