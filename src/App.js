@@ -8,8 +8,6 @@ import {
   Route,
   Link
 } from "react-router-dom";
-
-
 ///Pages
 import Contact from "./Pages/Contact";
 import Home from "./Pages/Home";
@@ -22,13 +20,13 @@ import ItemCategory from "./Pages/ItemCategory"
 
 
 //Context 
-import {CartContext} from "./Contexts/CartContext"
+import {CartProvider} from "./Contexts/CartContext"
 
 
 function App() {
-  const [cartList, setCartList] = useState([])
+
   return (
-    <CartContext.Provider value={{cartList,setCartList}}>
+    <CartProvider>
     <div className="App">
       <Router>
         <NavBar/>
@@ -45,9 +43,9 @@ function App() {
       </Router>
       <header className="App-header">
       </header>
-      
+
     </div> 
-    </CartContext.Provider>
+    </CartProvider>
   )
 }
 
