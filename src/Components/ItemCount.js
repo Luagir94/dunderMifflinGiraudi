@@ -56,7 +56,7 @@ return (
         <Button variant="outlined" color="primary" className='buttonCount' onClick={ () => {count > 0 && setCount(count - 1)}}> - </Button>
         </span>
 
-        <IconButton color="primary" aria-label="Agregar al Carrito" onClick={() => onAdd(count)}>
+        <IconButton color="primary" aria-label="Agregar al Carrito" onClick={onAdd}>
         
         <AddShoppingCartIcon/>
         </IconButton>

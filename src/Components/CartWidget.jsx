@@ -1,9 +1,9 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import Badge from '@material-ui/core/Badge';
 import { withStyles } from '@material-ui/core/styles';
 import IconButton from '@material-ui/core/IconButton';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-
+import CartContext from "../Contexts/CartContext"   
 const StyledBadge = withStyles((theme) => ({
   badge: {
     right: -3,
@@ -14,9 +14,10 @@ const StyledBadge = withStyles((theme) => ({
 }))(Badge);
 
 export default function CustomizedBadges() {
+  const {widgetNumber} = useContext(CartContext)
   return (
     <IconButton aria-label="cart" >
-      <StyledBadge badgeContent={4} color="secondary">
+      <StyledBadge badgeContent={widgetNumber} color="secondary">
         <ShoppingCartIcon />
       </StyledBadge>
     </IconButton>
