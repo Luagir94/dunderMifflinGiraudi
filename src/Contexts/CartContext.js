@@ -1,5 +1,6 @@
 import { createContext,useState,useEffect } from "react";
 
+
 const CartContext = createContext()
 
 const CartProvider =({children}) =>{
@@ -30,9 +31,12 @@ const CartProvider =({children}) =>{
     const clearCart = ()=>{
         setCartItems([])
     }
+    const removeItem = (id) => {
+        const nuevoArray = cartItems.filter(i=>i.item.id!==id)
+        setCartItems(nuevoArray)
+    }
 
-
-    return(<CartContext.Provider value={{cartItems, addToCart,quantityToAdd,onAdd,isHidden,widgetNumber,isInCart,clearCart,setQuantityToAdd }}>{children}</CartContext.Provider>)
+    return(<CartContext.Provider value={{cartItems, addToCart,quantityToAdd,onAdd,isHidden,widgetNumber,isInCart,clearCart,setQuantityToAdd,removeItem,setWidgetNumber }}>{children}</CartContext.Provider>)
 }
 export {CartProvider}
 export default CartContext

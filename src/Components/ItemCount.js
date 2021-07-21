@@ -39,10 +39,9 @@ export default function ItemCount ({stock,initialValue,id,price,quantity,item}) 
     
 
     const agregarCarrito = () => {
-        console.log(cartItems)
         addToCart(item,id,count,price);
         setQuantityToAdd(count)
-        console.log(cartItems)
+        
         
         
     }
