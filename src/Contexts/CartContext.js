@@ -20,7 +20,7 @@ const CartProvider =({children}) =>{
             price:price,
         };
         setCartItems([...cartItems, purchase]);
-        setWidgetNumber(purchase.count++)
+        setWidgetNumber(purchase.count+ widgetNumber)
         alert(`Se agregaron ${count} items`)
     };
     useEffect(() => {
@@ -32,7 +32,7 @@ const CartProvider =({children}) =>{
     }
 
 
-    return(<CartContext.Provider value={{cartItems, addToCart,quantityToAdd,onAdd,isHidden,widgetNumber,isInCart,clearCart }}>{children}</CartContext.Provider>)
+    return(<CartContext.Provider value={{cartItems, addToCart,quantityToAdd,onAdd,isHidden,widgetNumber,isInCart,clearCart,setQuantityToAdd }}>{children}</CartContext.Provider>)
 }
 export {CartProvider}
 export default CartContext

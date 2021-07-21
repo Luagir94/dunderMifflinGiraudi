@@ -30,7 +30,7 @@ const image={
 }
 
 export default function Item({name,img,description,stock,id,price}) {
-  const {cartItems,addToCart} = useContext(CartContext)
+  const {cartItems,addToCart,quantityToAdd} = useContext(CartContext)
 
 
   return (
@@ -46,7 +46,11 @@ export default function Item({name,img,description,stock,id,price}) {
                 <ItemCount
                   stock={stock}
                   initial={1}
-                  onAdd={addToCart}
+                  stock={stock}
+                  initial={1}
+                  id={id}
+                  price={price}
+                  item={name}
                 />
 
         <Button type="primary"  variant="outlined" color="primary" className='buttonCount'><Link to="/products">Volver Atras</Link></Button>      

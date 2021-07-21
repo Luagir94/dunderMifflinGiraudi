@@ -17,11 +17,17 @@ export default function CartTable(quantity,name,id,price){
     </tr>
   </thead>
   <tbody>
+  <tr>
+      <td>123</td>
+      <td>123</td>
+      <td>321</td>
+      <td>412</td>
+    </tr>
     <tr>
-      <td>{id}</td>
-      <td>{name}</td>
-      <td>{quantity}</td>
-      <td>{price}</td>
+      <td>213</td>
+      <td>213</td>
+      <td>123</td>
+      <td>123</td>
     </tr>
   </tbody>
 </Table>

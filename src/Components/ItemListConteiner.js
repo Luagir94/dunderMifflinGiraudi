@@ -26,8 +26,7 @@ const buttonStyle={
 }
 
 export default function ItemListConteiner({name,img,stock,id,price}) {
-  const [quantityToAdd, setQuantityToAdd] = useState(false)
-  const {cartItems,addToCart} = useContext(CartContext)
+  const {cartItems,addToCart,quantityToAdd} = useContext(CartContext)
   return (
     <div className='card' style={divStyle}>
       <div className='cardContent'>
@@ -41,7 +40,9 @@ export default function ItemListConteiner({name,img,stock,id,price}) {
         <ItemCount
                   stock={stock}
                   initial={1}
-                  onAdd={addToCart}
+                  id={id}
+                  price={price}
+                  item={name}
                 />
 
 
