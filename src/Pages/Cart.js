@@ -14,12 +14,9 @@ export default function Contact(){
     
     return(
        <>
-        {DATA.map((data) => (
+        
+                <CartTable/>
               
-                <CartTable name={data.name} id={data.id}
-                quantity={data.count} price={data.price}/>
-              
-            ))}
 
 
     

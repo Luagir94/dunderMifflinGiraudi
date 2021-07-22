@@ -11,7 +11,7 @@ const CartProvider =({children}) =>{
 
     const onAdd = (number) => setQuantityToAdd(number);
 
-    const isInCart = (id) => cartItems.filter((currentItem) => id === currentItem.id).length !== 0;
+    const isInCart = (id) => cartItems.find((currentItem) => id === currentItem.id);
 
     const addToCart = (item, id,count,price) => {
         const purchase = {
@@ -20,6 +20,8 @@ const CartProvider =({children}) =>{
             count: count,
             price:price,
         };
+
+
         setCartItems([...cartItems, purchase]);
         setWidgetNumber(purchase.count+ widgetNumber)
         alert(`Se agregaron ${count} items`)
@@ -30,9 +32,10 @@ const CartProvider =({children}) =>{
 
     const clearCart = ()=>{
         setCartItems([])
+        setWidgetNumber(0)
     }
     const removeItem = (id) => {
-        const nuevoArray = cartItems.filter(i=>i.item.id!==id)
+        const nuevoArray = cartItems.filter((element)=>element.id!==id)
         setCartItems(nuevoArray)
     }
 

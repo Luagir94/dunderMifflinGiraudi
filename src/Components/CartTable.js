@@ -3,16 +3,23 @@ import CartContext from "../Contexts/CartContext"
 import Table from 'react-bootstrap/Table'
 export default function CartTable(){
 
-  const {cartItems,clearCart,setWidgetNumber,removeItem} = useContext(CartContext)
-  const [precioFinal, setPrecioFinal] = useState(undefined)
+  const {cartItems,clearCart,setWidgetNumber,removeItem,widgetNumber} = useContext(CartContext)
   const DATA = cartItems
-  const precioTotal = ()=>{
-    setPrecioFinal([...DATA.price])}
+  const [vSumTotal, setVSumTotal] = useState(undefined);
+ 
+  useEffect(() => {
+    const handlesumar = () => {
+      const sumar = DATA.map((element) => (element.price)).reduce((a, b) => {return a + b;
+      }, 0);
+      setVSumTotal(sumar);
+      console.log(vSumTotal)
+    }})
+
     return(
         <Table striped bordered hover>
   <thead>
     <tr>
-      <th>#</th>
+      <th>#</th> 
       <th>Producto</th>
       <th>Cantidad</th>
       <th>Precio</th>
@@ -20,22 +27,23 @@ export default function CartTable(){
     </tr>
   </thead>
   <tbody>
-  {DATA.map((data) => (
+  {DATA.map((element) => (
               
         <tr>
-        <td>{data.id}</td>
-        <td>{data.item}</td>
-        <td>{data.count}</td>
-        <td>{(data.price)*(data.count)}</td>
-        <td><button onClick={()=>{removeItem(data.id)}} >X</button></td>
+        <td>{element.id}</td>
+        <td>{element.item}</td>
+        <td>{element.count}</td>
+        <td>{(element.price)*(element.count)}</td>
+        <td><button onClick={()=>{removeItem(element.id)
+                                  setWidgetNumber(widgetNumber-(element.count))}} >X</button></td>
         </tr>
        ))
       }
     <tr>
         <td>Precio Total</td>
-        <td>{precioTotal}</td>
+        <td>{vSumTotal}</td>
         </tr>
   </tbody>
 </Table>
     )
-}
+    }
