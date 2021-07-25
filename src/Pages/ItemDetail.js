@@ -36,6 +36,7 @@ export default function ItemDetail(){
           console.log('no results')
         } else{
           setItem(querySnapshot.docs.map(doc =>doc.data()))
+          console.log(item)
         }
       }).catch(error =>
         {console.log('error',error)
