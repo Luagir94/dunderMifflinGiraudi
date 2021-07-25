@@ -1,6 +1,7 @@
 import React, {useContext,useState,useEffect} from 'react'
 import CartContext from "../Contexts/CartContext"   
 import Table from 'react-bootstrap/Table'
+import { Link } from 'react-router-dom';
 export default function CartTable(){
 
   const {cartItems,clearCart,setWidgetNumber,removeItem,widgetNumber} = useContext(CartContext)
@@ -14,6 +15,7 @@ export default function CartTable(){
       setVSumTotal(sumar);
       console.log(vSumTotal)
     }})
+
 
     return(
         <Table striped bordered hover>
@@ -43,7 +45,11 @@ export default function CartTable(){
         <td>Precio Total</td>
         <td>{vSumTotal}</td>
         </tr>
+      {
+        
+      }
   </tbody>
 </Table>
+ 
     )
     }

@@ -4,6 +4,7 @@ import Item from '../Components/Item';
 import Backdrop from '@material-ui/core/Backdrop';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { makeStyles } from '@material-ui/core/styles';
+import { getFirestore } from '../firebase';
 const divStyle ={
     width: '100%',
     height:'75vh',
@@ -23,17 +24,26 @@ export default function ItemDetail(){
       }));
       
     const classes = useStyles();
-    const getProducts = async() =>{
-        const response = await fetch(`https://60dc604ec2b6280017feb95c.mockapi.io/articles/${productId}`);
-        const data = await response.json();
-        setItem(data);
-        setIsLoaded(true);
-      };
-      useEffect(() => {
-    
-        getProducts();
-        
-       }, [])
+    useEffect(() => {
+      setIsLoaded(true);
+      const db = getFirestore();
+      const itemCollection = db.collection("productos");
+
+      
+     
+      itemCollection.get().then((querySnapshot)=>{
+        if(querySnapshot.size === 0){
+          console.log('no results')
+        } else{
+          setItem(querySnapshot.docs.map(doc =>doc.data()))
+        }
+      }).catch(error =>
+        {console.log('error',error)
+      })
+  
+     
+      
+     }, [])
        if (!isLoaded) {
         return(<Backdrop className={classes.backdrop} open >
           <CircularProgress color="inherit" />
@@ -42,7 +52,7 @@ export default function ItemDetail(){
     return(
         <>      <div style={divStyle}>
                 <Item name={item.name} img={item.img} id={item.id}
-                stock={item.stock} description={item.descripcion} price={item.precio}/>
+                stock={item.stock} description={item.description} price={item.price}/>
                 </div>
         </>
     )}

@@ -17,7 +17,7 @@ import Link from '@material-ui/core/Link';
 import ItemListConteiner from '../Components/ItemListConteiner';
 import Backdrop from '@material-ui/core/Backdrop';
 import CircularProgress from '@material-ui/core/CircularProgress';
-
+import { getFirestore } from '../firebase';
 
 
 
@@ -36,21 +36,31 @@ export default function ItemCategory() {
     
   const classes = useStyles();
 
-const getProducts = async() =>{
-  const response = await fetch("https://60dc604ec2b6280017feb95c.mockapi.io/articles/");
-  const data = await response.json(); 
-  const dataFiltrada = await data.filter(element => element.category === categoryId)
-  setItems(dataFiltrada);
+
+useEffect(() => {
   setIsLoaded(true);
-};
+  const db = getFirestore();
+  const itemCollection = db.collection("productos");
 
+  
+ 
+  itemCollection.get().then((querySnapshot)=>{
+    if(querySnapshot.size === 0){
+      console.log('no results')
+    } else{
+      setItems(querySnapshot.docs.map(doc =>doc.data()))
+    }
+  }).then(()=>{
+    const dataFiltrada = items.filter(element => element.category === categoryId)
+  setItems(dataFiltrada);
+  }
+  ).catch(error =>
+    {console.log('error',error)
+  })
 
-  useEffect(() => {
-    
-    getProducts();
-    
-   }, [categoryId])
-
+ 
+  
+ }, [categoryId])
   if (!isLoaded) {
     return(<Backdrop className={classes.backdrop} open >
       <CircularProgress color="inherit" />
@@ -63,7 +73,7 @@ const getProducts = async() =>{
           {items.map((data) => (
               <Grid item key={data.id} xs={12} sm={6} md={4}>
                 <ItemListConteiner name={data.name} img={data.img} id={data.id}
-                stock={data.stock} price={data.precio}/>
+                stock={data.stock} price={data.price}/>
               </Grid> 
             ))}
           </Grid>
