@@ -22,29 +22,29 @@ export default function ItemDetail(){
           color: '#fff',
         },
       }));
-      
+
       const itemDetail = () => {
+        console.log(productId)
         const db = getFirestore();
         const itemCollection = db.collection("productos")
-        .where("name", "==", `${productId}`)
+        .where("name", "==", productId)
         return itemCollection.get().then((querySnapshot) => {
             if(querySnapshot.size === 0){
                 console.log('no results')
             } else {
-              setItem(querySnapshot.docs.map(doc => doc.data()))
+              setItem(querySnapshot.docs.map(doc => doc.data())[0])
             }
         }).catch(error => {
             console.log('error ->', error)
         })
     }
-
+    console.log(item)
     const classes = useStyles();
     useEffect(() => {
-      setIsLoaded(true);
       itemDetail()
-     
+      setIsLoaded(true)
       
-     }, [])
+     }, [productId])
        if (!isLoaded) {
         return(<Backdrop className={classes.backdrop} open >
           <CircularProgress color="inherit" />
