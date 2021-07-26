@@ -69,7 +69,7 @@ console.log(items)
             {items.map((data) => (
               <Grid item key={data.id} xs={12} sm={6} md={4}>
                 <ItemListConteiner name={data.name} img={data.img} id={data.id}
-                stock={data.stock} price={data.precio}/>
+                stock={data.stock} price={data.price}/>
               </Grid> 
             ))}
           </Grid>
