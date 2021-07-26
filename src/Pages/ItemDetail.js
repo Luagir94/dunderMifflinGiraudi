@@ -23,25 +23,25 @@ export default function ItemDetail(){
         },
       }));
       
+      const itemDetail = () => {
+        const db = getFirestore();
+        const itemCollection = db.collection("productos")
+        .where("name", "==", `${productId}`)
+        return itemCollection.get().then((querySnapshot) => {
+            if(querySnapshot.size === 0){
+                console.log('no results')
+            } else {
+              setItem(querySnapshot.docs.map(doc => doc.data()))
+            }
+        }).catch(error => {
+            console.log('error ->', error)
+        })
+    }
+
     const classes = useStyles();
     useEffect(() => {
       setIsLoaded(true);
-      const db = getFirestore();
-      const itemCollection = db.collection("productos");
-
-      
-     
-      itemCollection.get().then((querySnapshot)=>{
-        if(querySnapshot.size === 0){
-          console.log('no results')
-        } else{
-          setItem(querySnapshot.docs.map(doc =>doc.data()))
-          console.log(item)
-        }
-      }).catch(error =>
-        {console.log('error',error)
-      })
-  
+      itemDetail()
      
       
      }, [])

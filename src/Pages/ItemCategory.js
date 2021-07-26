@@ -35,31 +35,24 @@ export default function ItemCategory() {
   }));
     
   const classes = useStyles();
-
+  const filterProducts = () => {
+    const db = getFirestore();
+    const itemCollection = db.collection("productos")
+    .where("category", "==", `${categoryId}`)
+    return itemCollection.get().then((querySnapshot) => {
+        if(querySnapshot.size === 0){
+            console.log('no results')
+        } else {
+            setItems(querySnapshot.docs.map(doc => doc.data()))
+        }
+    }).catch(error => {
+        console.log('error ->', error)
+    })
+}
 
 useEffect(() => {
   setIsLoaded(true);
-  const db = getFirestore();
-  const itemCollection = db.collection("productos");
-
-  
- 
-  itemCollection.get().then((querySnapshot)=>{
-    if(querySnapshot.size === 0){
-      console.log('no results')
-    } else{
-      setItems(querySnapshot.docs.map(doc =>doc.data()))
-    }
-  }).then(()=>{
-    const dataFiltrada = items.filter(element => element.category === categoryId)
-  setItems(dataFiltrada);
-  }
-  ).catch(error =>
-    {console.log('error',error)
-  })
-
- 
-  
+  filterProducts()
  }, [categoryId])
   if (!isLoaded) {
     return(<Backdrop className={classes.backdrop} open >
