@@ -1,14 +1,8 @@
 import React, {useContext,useState,useEffect} from 'react';
 import CartContext from "../Contexts/CartContext"  ; 
 import Table from 'react-bootstrap/Table';
-import Checkout from './checkout';
+import Checkout from '../Pages/Checkout';
 import { Link } from 'react-router-dom';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,Link,
-} from "react-router-dom";
-import Checkout from "./Checkout";
 export default function CartTable(){
 
   const {cartItems,clearCart,setWidgetNumber,removeItem,widgetNumber,setCartItems} = useContext(CartContext)
@@ -51,15 +45,10 @@ export default function CartTable(){
     <tr>
         <td>Precio Total</td>
         <td>{vSumTotal}</td>
-        <td> <Link to="/Checkout"><button className="btn btn-primary m-1">Comprar</button></Link>
-                            <button  onClick={()=>{
-              context.setCartItems([])}}
-               className="btn btn-warning m-1">Limpiar</button>
-        <Switch>
-            <Route path="/Checkout">
+        <td> <Link to="/checkout"><button className="btn btn-primary m-1">Comprar</button></Link>
+
                 <Checkout total={vSumTotal}/>
-            </Route>
-        </Switch></td>
+        </td>
         </tr>
       {
         

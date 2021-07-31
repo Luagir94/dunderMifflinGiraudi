@@ -1,15 +1,16 @@
 import React, {useState, useContext} from "react";
 import { Form } from 'react-bootstrap';
-import db from '../firebase/index'
-import { CartContext } from "../components/cartContext";
+import {getFirestore} from '../firebase/index'
+import  CartContext from "../Contexts/CartContext";
 
 function Checkout(suma) {
 
-  const context = useContext(CartContext)
+  const {cartItems,} = useContext(CartContext)
   const [nombre, setNombre] = useState('')
   const [email, setEmail] = useState('')
   const [telefono, setTelefono] = useState('')
   const [error, setError] = useState('')
+  const db = getFirestore();
   let total = suma
   
   
@@ -27,10 +28,10 @@ function Checkout(suma) {
       setError('Nombre vacio')
     }
     if(telefono.trim() && email.trim() && nombre.trim()){
-      const item = context.cartData.map((curso) => {
-      return {id: curso.id,
-              tittle: curso.titulo,
-              price: curso.price}
+      const item = cartItems.map((product) => {
+      return {id: product.id,
+              tittle: product.name,
+              price: product.price}
     })
    
     const order = {
