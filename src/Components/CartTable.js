@@ -47,7 +47,7 @@ export default function CartTable(){
         <td>{vSumTotal}</td>
         <td> <Link to="/checkout"><button className="btn btn-primary m-1">Comprar</button></Link>
 
-                <Checkout total={vSumTotal}/>
+                
         </td>
         </tr>
       {

@@ -16,11 +16,13 @@ import About from "./Pages/About";
 import Cart from "./Pages/Cart";
 import Error404 from "./Pages/Error404";
 import ItemDetail from "./Pages/ItemDetail";
-import ItemCategory from "./Pages/ItemCategory"
+import ItemCategory from "./Pages/ItemCategory";
+import Checkout from './Pages/Checkout';
 
 
 //Context 
 import {CartProvider} from "./Contexts/CartContext"
+
 
 
 function App() {
@@ -37,6 +39,7 @@ function App() {
           <Route  exact path="/category/:categoryId" component={ItemCategory}/>
           <Route  exact path="/about" component={About}/>
           <Route  exact path="/contact" component={Contact}/>
+          <Route  exact path="/checkout" component={Checkout}/>
           <Route  exact path="/cart" component={Cart}/>
           <Route  path="*" component={Error404}/>
         </Switch>
