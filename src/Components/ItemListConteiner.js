@@ -15,7 +15,7 @@ const divStyle ={
   height: '30rem',
   width: '18rem',
   margin:'2rem',
- 
+
 }
 const fontStyle={
   color:'#15384e',

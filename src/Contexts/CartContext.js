@@ -8,6 +8,8 @@ const CartProvider =({children}) =>{
     const [isHidden, setIsHidden] = useState(true);
     const [cartItems, setCartItems] = useState([])
     const [widgetNumber, setWidgetNumber] = useState(0)
+    const [name, setName] = useState('')
+
 
     const onAdd = (number) => setQuantityToAdd(number);
 
@@ -20,11 +22,10 @@ const CartProvider =({children}) =>{
             count: count,
             price:price,
         };
-
-
+        setName(item)
         setCartItems([...cartItems, purchase]);
         setWidgetNumber(purchase.count+ widgetNumber)
-        alert(`Se agregaron ${count} items`)
+        
     };
     useEffect(() => {
         quantityToAdd ? setIsHidden(false) : setIsHidden(true);
@@ -39,7 +40,7 @@ const CartProvider =({children}) =>{
         setCartItems(nuevoArray)
     }
 
-    return(<CartContext.Provider value={{cartItems, addToCart,quantityToAdd,onAdd,isHidden,widgetNumber,isInCart,clearCart,setQuantityToAdd,removeItem,setWidgetNumber }}>{children}</CartContext.Provider>)
+    return(<CartContext.Provider value={{cartItems,name, addToCart,quantityToAdd,onAdd,isHidden,widgetNumber,isInCart,clearCart,setQuantityToAdd,removeItem,setWidgetNumber }}>{children}</CartContext.Provider>)
 }
 export {CartProvider}
 export default CartContext
