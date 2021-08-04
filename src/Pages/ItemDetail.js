@@ -33,6 +33,7 @@ export default function ItemDetail(){
                 console.log('no results')
             } else {
               setItem(querySnapshot.docs.map(doc => doc.data())[0])
+              setIsLoaded(true)
             }
         }).catch(error => {
             console.log('error ->', error)
@@ -42,7 +43,7 @@ export default function ItemDetail(){
     const classes = useStyles();
     useEffect(() => {
       itemDetail()
-      setIsLoaded(true)
+      
       
      }, [productId])
        if (!isLoaded) {

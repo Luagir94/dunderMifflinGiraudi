@@ -18,12 +18,13 @@ import ItemListConteiner from '../Components/ItemListConteiner';
 import Backdrop from '@material-ui/core/Backdrop';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { getFirestore } from '../firebase';
+import { Category } from '@material-ui/icons';
 
 
 
 
 
-export default function ItemCategory() {
+export default function ItemCategory(category) {
   const {categoryId} = useParams();
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
@@ -33,7 +34,8 @@ export default function ItemCategory() {
       color: '#fff',
     },
   }));
-    
+
+
   const classes = useStyles();
   const filterProducts = () => {
     const db = getFirestore();
@@ -44,6 +46,7 @@ export default function ItemCategory() {
             console.log('no results')
         } else {
             setItems(querySnapshot.docs.map(doc => doc.data()))
+            setIsLoaded(true)
         }
     }).catch(error => {
         console.log('error ->', error)
@@ -51,7 +54,6 @@ export default function ItemCategory() {
 }
 
 useEffect(() => {
-  setIsLoaded(true);
   filterProducts()
  }, [categoryId])
   if (!isLoaded) {

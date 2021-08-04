@@ -7,16 +7,12 @@ export default function CartTable(){
 
   const {cartItems,clearCart,setWidgetNumber,removeItem,widgetNumber,setCartItems} = useContext(CartContext)
   const DATA = cartItems
-  const [vSumTotal, setVSumTotal] = useState(undefined);
- 
-  useEffect(() => {
-    const handlesumar = () => {
-      const sumar = DATA.map((element) => (element.price)).reduce((a, b) => {return a + b;
-      }, 0);
-      setVSumTotal(sumar);
-      console.log(vSumTotal)
-    }})
+  
 
+    const handlesumar = () => {
+      return cartItems.reduce((acumulador, item) => {
+       return acumulador += item.price * item.count;
+     }, 0);}
 
     return(
         <Table striped bordered hover>
@@ -44,7 +40,7 @@ export default function CartTable(){
       }
     <tr>
         <td>Precio Total</td>
-        <td>{vSumTotal}</td>
+        <td>{handlesumar()}</td>
         <td> <Link to="/checkout"><button className="btn btn-primary m-1">Comprar</button></Link>
 
                 

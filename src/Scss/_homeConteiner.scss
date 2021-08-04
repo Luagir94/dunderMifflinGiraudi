@@ -1,0 +1,80 @@
+
+
+
+#homeConteiner{
+    display: flex;
+    margin: auto;
+    width: 60rem;
+    height: 20rem;
+    margin-bottom: 5rem;
+    background-color: $mainColor;
+    border: 1px solid $mainColor;
+    border-radius: 25px;
+    overflow: hidden;
+    a{display: flex;
+        text-decoration: none;
+
+    };
+    h2{
+        margin:auto 3rem auto 3rem
+        
+    }
+    #funkoHome{
+
+        width: 60rem;
+        margin:auto;
+        display: grid;
+        overflow: hidden;
+        margin-top: -3.5rem;
+        
+        
+    }
+    h2{
+        color: white;
+    }
+}
+
+
+#homeConteiner2{
+    display: flex;
+    justify-content: space-evenly;
+    margin: auto;
+    margin-top: 1rem;
+    width: 60rem;
+    .container{display: grid;
+        justify-content: center;
+        
+      
+    }
+    a{display: flex;
+        text-decoration: none;}
+    div{
+        border: 1px solid $mainColor;
+        margin:0 0.5rem 0 0.5rem;
+
+        height: 20rem;
+        width: 30rem;
+        border-radius: 25px;
+        background-color: $mainColor;
+        img{
+            width: 30rem;
+        }
+        #mugHome{
+            width: 60rem;
+            padding-right: 27rem;
+            padding-bottom: 27rem;
+            margin-left: -5rem;
+            margin-top: -1rem;
+        }
+        #resmaHome{
+            width: 45rem;
+            height: 30rem;
+            padding-left:1rem;
+            margin-top: -3.5rem;
+            margin-left: -10rem;
+            
+        }
+    }
+    
+}
+

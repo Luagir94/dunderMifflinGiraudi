@@ -13,9 +13,23 @@ const CartProvider =({children}) =>{
 
     const onAdd = (number) => setQuantityToAdd(number);
 
-    const isInCart = (id) => cartItems.find((currentItem) => id === currentItem.id);
+    const isInCart = (id) => {
+        return cartItems.find((item) => id === item.id)
+       }
 
     const addToCart = (item, id,count,price) => {
+        if (isInCart(id)){
+            const updateCart = [...cartItems];
+      
+            updateCart.forEach((element) => {
+              if (element.id === id) {
+               return element.count = element.count + count;
+              }
+            });
+            setCartItems(updateCart);
+            setName(item)
+            setWidgetNumber(count+ widgetNumber)
+        }else {
         const purchase = {
             item: item,
             id: id,
@@ -26,7 +40,7 @@ const CartProvider =({children}) =>{
         setCartItems([...cartItems, purchase]);
         setWidgetNumber(purchase.count+ widgetNumber)
         
-    };
+    }};
     useEffect(() => {
         quantityToAdd ? setIsHidden(false) : setIsHidden(true);
     }, [quantityToAdd]);

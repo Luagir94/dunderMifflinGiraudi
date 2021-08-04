@@ -3,6 +3,36 @@
   padding: 0;
 }
 
+/*Variables*/
+/*Imports*/
+.footer {
+  display: flex;
+  flex-direction: row;
+  height: 15rem;
+  background-color: #15384e;
+  margin-top: 10rem;
+  box-shadow: 0rem -0.5rem 3rem #15384e;
+}
+
+.footer div {
+  margin: auto;
+}
+
+.footer div li {
+  list-style: none;
+  margin: 1rem 0 1rem 0;
+}
+
+.footer div li a {
+  color: white;
+}
+
+.footer img {
+  width: 3rem;
+  margin: 1rem 0 1rem 0;
+  color: white;
+}
+
 #logoNav {
   width: 80px;
 }
@@ -10,13 +40,8 @@
 #navBar {
   background-color: #15384e;
   margin-bottom: 3.5rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
 }
 
 .linkNav {
@@ -63,6 +88,86 @@
 #navDrop:hover {
   color: white;
   -webkit-text-stroke: 0.5px black;
+}
+
+#homeConteiner {
+  display: flex;
+  margin: auto;
+  width: 60rem;
+  height: 20rem;
+  margin-bottom: 5rem;
+  background-color: #15384e;
+  border: 1px solid #15384e;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+#homeConteiner a {
+  display: flex;
+  text-decoration: none;
+}
+
+#homeConteiner h2 {
+  margin: auto 3rem auto 3rem;
+}
+
+#homeConteiner #funkoHome {
+  width: 60rem;
+  margin: auto;
+  display: grid;
+  overflow: hidden;
+  margin-top: -3.5rem;
+}
+
+#homeConteiner h2 {
+  color: white;
+}
+
+#homeConteiner2 {
+  display: flex;
+  justify-content: space-evenly;
+  margin: auto;
+  margin-top: 1rem;
+  width: 60rem;
+}
+
+#homeConteiner2 .container {
+  display: grid;
+  justify-content: center;
+}
+
+#homeConteiner2 a {
+  display: flex;
+  text-decoration: none;
+}
+
+#homeConteiner2 div {
+  border: 1px solid #15384e;
+  margin: 0 0.5rem 0 0.5rem;
+  height: 20rem;
+  width: 30rem;
+  border-radius: 25px;
+  background-color: #15384e;
+}
+
+#homeConteiner2 div img {
+  width: 30rem;
+}
+
+#homeConteiner2 div #mugHome {
+  width: 60rem;
+  padding-right: 27rem;
+  padding-bottom: 27rem;
+  margin-left: -5rem;
+  margin-top: -1rem;
+}
+
+#homeConteiner2 div #resmaHome {
+  width: 45rem;
+  height: 30rem;
+  padding-left: 1rem;
+  margin-top: -3.5rem;
+  margin-left: -10rem;
 }
 
 #shopCart {
@@ -146,4 +251,3 @@
 #dropDown li:hover ul {
   display: block;
 }
-/*# sourceMappingURL=App.css.map */

@@ -48,6 +48,7 @@ export default function Products() {
         console.log('no results')
       } else{
         setItems(querySnapshot.docs.map(doc =>doc.data()))
+        setIsLoaded(true)
       }
     }).catch(error =>
       {console.log('error',error)

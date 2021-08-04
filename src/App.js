@@ -1,6 +1,5 @@
 import './App.css';
 import React, { useState } from 'react';
-import NavBar from './Components/NavBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   BrowserRouter as Router,
@@ -8,6 +7,13 @@ import {
   Route,
   Link
 } from "react-router-dom";
+
+
+///Navigation
+import NavBar from './Components/NavBar';
+import Footer from './Components/FooterNav';
+
+
 ///Pages
 import Contact from "./Pages/Contact";
 import Home from "./Pages/Home";
@@ -18,6 +24,8 @@ import Error404 from "./Pages/Error404";
 import ItemDetail from "./Pages/ItemDetail";
 import ItemCategory from "./Pages/ItemCategory";
 import Checkout from './Pages/Checkout';
+
+
 
 
 //Context 
@@ -32,6 +40,10 @@ function App() {
     <div className="App">
       <Router>
         <NavBar/>
+        <div>
+          <div>
+            
+          </div>
         <Switch>
           <Route  exact path="/" component={Home}/>
           <Route  exact path="/products" component={Products}/>
@@ -43,6 +55,9 @@ function App() {
           <Route  exact path="/cart" component={Cart}/>
           <Route  path="*" component={Error404}/>
         </Switch>
+        </div>
+
+        <Footer/>
       </Router>
       <header className="App-header">
       </header>
