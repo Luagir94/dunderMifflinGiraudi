@@ -30,14 +30,14 @@ export default function Products() {
   const useStyles = makeStyles((theme) => ({
     backdrop: {
       zIndex: theme.zIndex.drawer + 1,
-      color: '#fff',
+      color: 'rgb(21, 56 , 78)',
     },
   }));
     
   const classes = useStyles();
 
   useEffect(() => {
-    setIsLoaded(true);
+
     const db = getFirestore();
     const itemCollection = db.collection("productos");
 

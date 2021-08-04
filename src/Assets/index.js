@@ -6,6 +6,7 @@ import github from './github.png';
 import resmaHome from './resmaHome.png';
 import funkoHome from './funkoHome.png';
 import mugHome from './mugHome.png';
+import linkedin from './linkedin.png'
 
 
 
@@ -49,6 +50,11 @@ const IMAGES = {
         img: mugHome,
         name :'mugHome',
         id : 'mugHome'
+    },
+    img9: {
+        img: linkedin,
+        name :'linkedin',
+        id : 'linkedin'
     },
 }
 

@@ -31,8 +31,6 @@ function NavBar(){
         <NavDropdown.Item ><Link to={`/category/${office}`}>Art Oficina</Link></NavDropdown.Item>
         <NavDropdown.Item><Link to={`/category/${misc}`} >Misc</Link></NavDropdown.Item>
       </NavDropdown>
-      <Nav.Link ><Link to="/about" >Nosotros</Link></Nav.Link>
-      <Nav.Link ><Link to="/contact" >Contacto</Link></Nav.Link>
     </Nav>
     <Link to="/Cart"><CartWidget/></Link>
   </Navbar.Collapse>

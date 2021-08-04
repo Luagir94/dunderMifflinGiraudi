@@ -10,6 +10,7 @@ $mainColorBis : rgba(21, 56 , 78, 0.3);
 @import "footer";
 @import "navBar";
 @import "homeConteiner";
+@import "cartTable";
 
 
 #shopCart {
@@ -86,4 +87,7 @@ li:hover{
         ;}
 }
 }
-  
+
+#loader{
+    margin-top: 100rem;
+}

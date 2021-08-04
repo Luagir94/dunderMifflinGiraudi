@@ -19,7 +19,7 @@ export default function ItemDetail(){
     const useStyles = makeStyles((theme) => ({
         backdrop: {
           zIndex: theme.zIndex.drawer + 1,
-          color: '#fff',
+          color: 'rgb(21, 56 , 78)',
         },
       }));
 

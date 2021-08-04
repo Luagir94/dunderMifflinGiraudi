@@ -8,29 +8,52 @@
 .footer {
   display: flex;
   flex-direction: row;
-  height: 15rem;
+  height: 5rem;
   background-color: #15384e;
   margin-top: 10rem;
   box-shadow: 0rem -0.5rem 3rem #15384e;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+
+.footer p {
+  color: white;
+  font-size: 1rem;
+  margin: 0.1rem auto auto auto;
 }
 
 .footer div {
   margin: auto;
 }
 
-.footer div li {
-  list-style: none;
-  margin: 1rem 0 1rem 0;
+.footer div ul {
+  display: flex;
 }
 
-.footer div li a {
+.footer div ul li {
+  list-style: none;
+  margin: 0 2rem auto 2rem;
+}
+
+.footer div ul li a {
+  margin: 0 2rem 0rem 2rem;
   color: white;
 }
 
 .footer img {
   width: 3rem;
-  margin: 1rem 0 1rem 0;
   color: white;
+  margin-top: -0.5rem;
+}
+
+.footer #footerNavigation {
+  margin-left: 9rem;
+}
+
+.footer #footerNavigation li {
+  margin: 1.5rem 0 2rem 0;
 }
 
 #logoNav {
@@ -95,7 +118,7 @@
   margin: auto;
   width: 60rem;
   height: 20rem;
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
   background-color: #15384e;
   border: 1px solid #15384e;
   border-radius: 25px;
@@ -168,6 +191,25 @@
   padding-left: 1rem;
   margin-top: -3.5rem;
   margin-left: -10rem;
+}
+
+#tabla {
+  width: 40rem;
+  margin: auto;
+}
+
+#btn {
+  margin: auto;
+}
+
+#botones {
+  margin-top: 20rem;
+  margin-left: 80%;
+}
+
+#botones a {
+  color: white;
+  text-decoration: none;
 }
 
 #shopCart {
@@ -250,4 +292,8 @@
 
 #dropDown li:hover ul {
   display: block;
+}
+
+#loader {
+  margin-top: 100rem;
 }

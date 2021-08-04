@@ -37,12 +37,13 @@ export default function ItemCount ({stock,initialValue,id,price,quantity,item}) 
     const classes = useStyles();
     const {setQuantityToAdd,addToCart,cartItems,name} = useContext(CartContext)
     const [count, setCount] = useState(0)
-    const [show, setShow] = useState(false);
+    const [showCart, setShowCart] = useState(false);
+    const [showStock, setShowStock] = useState(false);
 
-    const handleCloseCart = () => setShow(false);
-    const handleShowCart = () => setShow(true);
-    const handleCloseStock = () => setShow(false);
-    const handleShowStock = () => setShow(true);
+    const handleCloseCart = () => setShowCart(false);
+    const handleShowCart = () => setShowCart(true);
+    const handleCloseStock = () => setShowStock(false);
+    const handleShowStock = () => setShowStock(true);
 
     const agregarCarrito = () => {
         addToCart(item,id,count,price);
@@ -51,7 +52,7 @@ export default function ItemCount ({stock,initialValue,id,price,quantity,item}) 
         
         
     }
-    
+
 return (
     <>
     <div className={classes.root} > 
@@ -59,7 +60,7 @@ return (
         <span className='buttonCount'>
         <Button variant="outlined" color="primary"  onClick={ () => {
             if (stock > 1 &&  count < stock) {setCount(count+1)
-                
+        
             }
         else {
             handleShowStock()
@@ -84,7 +85,7 @@ return (
     </div>
 
     
-    <Modal show={show} onHide={handleCloseCart}>
+         <Modal show={showCart} onHide={handleCloseCart}>
         <Modal.Header >
           <Modal.Title>Producto/s agregados al carrito!</Modal.Title>
         </Modal.Header>
@@ -96,13 +97,13 @@ return (
         </Modal.Footer>
       </Modal>
 
-      <Modal show={show} onHide={handleCloseStock}>
+      <Modal show={showStock} onHide={handleCloseStock}>
         <Modal.Header >
           <Modal.Title>Lo Sentimos!</Modal.Title>
         </Modal.Header>
         <Modal.Body>No queda mas stock de {name}</Modal.Body>
         <Modal.Footer>
-        <Button variant="secondary" onClick={handleCloseCart}>
+        <Button variant="secondary" onClick={handleCloseStock}>
             Cerrar
           </Button>
         </Modal.Footer>
