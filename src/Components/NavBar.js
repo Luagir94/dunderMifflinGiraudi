@@ -20,11 +20,11 @@ function NavBar(){
 
     return(
 <Navbar  expand="lg" id='navBar'>
-  <Link to="/" ><CustomImg {...IMAGES.img1}/></Link>
+  <Link to="/dunderMifflinGiraudi" ><CustomImg {...IMAGES.img1}/></Link>
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="mr-auto">
-      <Nav.Link ><Link to="/" >Home</Link></Nav.Link>
+      <Nav.Link ><Link to="/dunderMifflinGiraudi" >Home</Link></Nav.Link>
       <NavDropdown title="Productos" id="basic-nav-dropdown">
         <NavDropdown.Item><Link to={`/products`} >Todos los productos</Link></NavDropdown.Item>
         <NavDropdown.Item ><Link to={`/category/${resma}`} >Resmas</Link></NavDropdown.Item>
