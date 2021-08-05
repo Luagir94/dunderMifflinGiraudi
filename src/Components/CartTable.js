@@ -6,13 +6,6 @@ import Button from '@material-ui/core/Button';
 import Modal from 'react-bootstrap/Modal';
 export default function CartTable(){
 
-<<<<<<< HEAD
-  const {cartItems,clearCart,setWidgetNumber,removeItem,widgetNumber,totalPrice,setTotalPrice} = useContext(CartContext)
-  const DATA = cartItems
-  const [vSumTotal, setVSumTotal] = useState(undefined);
-    return(
-        <Table striped bordered hover>
-=======
   const {cartItems,clearCart,setWidgetNumber,removeItem,widgetNumber,setCartItems} = useContext(CartContext)
   const DATA = cartItems
   const handleCloseCart = () => setShow(false);
@@ -28,7 +21,6 @@ export default function CartTable(){
 
     return(<div id='tabla'>
         <Table striped bordered hover >
->>>>>>> firebase
   <thead>
     <tr>
       <th>#</th> 
@@ -45,24 +37,14 @@ export default function CartTable(){
         <td>{element.id}</td>
         <td>{element.item}</td>
         <td>{element.count}</td>
-<<<<<<< HEAD
-        <td>{(element.price)*(element.count)}</td>
-        <td><button onClick={()=>{removeItem(element.id)
-                                  setWidgetNumber(widgetNumber-(element.count))
-                                  setTotalPrice(totalPrice -(element.price))}} >X</button></td>
-=======
         <td>${(element.price)*(element.count)}</td>
         <td><button className="btn btn-danger m-1" onClick={()=>{removeItem(element.id)
                                   setWidgetNumber(widgetNumber-(element.count))}} >X</button></td>
->>>>>>> firebase
         </tr>
        ))
       }
     <tr>
         <td>Precio Total</td>
-<<<<<<< HEAD
-        <td>{totalPrice}</td>
-=======
         <td></td>
         <td></td>
         <td>${handlesumar()}</td>
@@ -76,7 +58,6 @@ export default function CartTable(){
                 
         </td>
        
->>>>>>> firebase
         </tr>
       {
         
