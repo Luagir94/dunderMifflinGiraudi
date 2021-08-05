@@ -8,14 +8,12 @@
 .footer {
   display: flex;
   flex-direction: row;
-  height: 5rem;
+  height: 10rem;
   background-color: #15384e;
-  margin-top: 10rem;
+  margin-top: 5rem;
   box-shadow: 0rem -0.5rem 3rem #15384e;
   width: 100%;
-  position: fixed;
-  left: 0;
-  bottom: 0;
+  position: sticky;
 }
 
 .footer p {
