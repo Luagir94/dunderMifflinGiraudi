@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/dunderMifflinGiraudi/static/css/main.0f3e95a9.chunk.css",
+    "main.css": "/dunderMifflinGiraudi/static/css/main.0bfc0eae.chunk.css",
     "main.js": "/dunderMifflinGiraudi/static/js/main.ae02959b.chunk.js",
     "main.js.map": "/dunderMifflinGiraudi/static/js/main.ae02959b.chunk.js.map",
     "runtime-main.js": "/dunderMifflinGiraudi/static/js/runtime-main.6306f02c.js",
@@ -12,7 +12,7 @@
     "static/js/3.d735ced0.chunk.js.map": "/dunderMifflinGiraudi/static/js/3.d735ced0.chunk.js.map",
     "index.html": "/dunderMifflinGiraudi/index.html",
     "static/css/2.4c97ca4f.chunk.css.map": "/dunderMifflinGiraudi/static/css/2.4c97ca4f.chunk.css.map",
-    "static/css/main.0f3e95a9.chunk.css.map": "/dunderMifflinGiraudi/static/css/main.0f3e95a9.chunk.css.map",
+    "static/css/main.0bfc0eae.chunk.css.map": "/dunderMifflinGiraudi/static/css/main.0bfc0eae.chunk.css.map",
     "static/js/2.37ae6a7f.chunk.js.LICENSE.txt": "/dunderMifflinGiraudi/static/js/2.37ae6a7f.chunk.js.LICENSE.txt",
     "static/media/errorC.47771115.png": "/dunderMifflinGiraudi/static/media/errorC.47771115.png",
     "static/media/funkoHome.03d26a8e.png": "/dunderMifflinGiraudi/static/media/funkoHome.03d26a8e.png",
@@ -25,7 +25,7 @@
     "static/js/runtime-main.6306f02c.js",
     "static/css/2.4c97ca4f.chunk.css",
     "static/js/2.37ae6a7f.chunk.js",
-    "static/css/main.0f3e95a9.chunk.css",
+    "static/css/main.0bfc0eae.chunk.css",
     "static/js/main.ae02959b.chunk.js"
   ]
 }
