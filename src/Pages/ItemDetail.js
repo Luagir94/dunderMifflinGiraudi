@@ -4,6 +4,7 @@ import Item from '../Components/Item';
 import Backdrop from '@material-ui/core/Backdrop';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { makeStyles } from '@material-ui/core/styles';
+import { getFirestore } from '../firebase';
 const divStyle ={
     width: '100%',
     height:'75vh',
@@ -18,22 +19,33 @@ export default function ItemDetail(){
     const useStyles = makeStyles((theme) => ({
         backdrop: {
           zIndex: theme.zIndex.drawer + 1,
-          color: '#fff',
+          color: 'rgb(21, 56 , 78)',
         },
       }));
-      
+
+      const itemDetail = () => {
+        console.log(productId)
+        const db = getFirestore();
+        const itemCollection = db.collection("productos")
+        .where("name", "==", productId)
+        return itemCollection.get().then((querySnapshot) => {
+            if(querySnapshot.size === 0){
+                console.log('no results')
+            } else {
+              setItem(querySnapshot.docs.map(doc => doc.data())[0])
+              setIsLoaded(true)
+            }
+        }).catch(error => {
+            console.log('error ->', error)
+        })
+    }
+    console.log(item)
     const classes = useStyles();
-    const getProducts = async() =>{
-        const response = await fetch(`https://60dc604ec2b6280017feb95c.mockapi.io/articles/${productId}`);
-        const data = await response.json();
-        setItem(data);
-        setIsLoaded(true);
-      };
-      useEffect(() => {
-    
-        getProducts();
-        
-       }, [])
+    useEffect(() => {
+      itemDetail()
+      
+      
+     }, [productId])
        if (!isLoaded) {
         return(<Backdrop className={classes.backdrop} open >
           <CircularProgress color="inherit" />
@@ -42,7 +54,7 @@ export default function ItemDetail(){
     return(
         <>      <div style={divStyle}>
                 <Item name={item.name} img={item.img} id={item.id}
-                stock={item.stock} description={item.descripcion} price={item.precio}/>
+                stock={item.stock} description={item.description} price={item.price}/>
                 </div>
         </>
     )}

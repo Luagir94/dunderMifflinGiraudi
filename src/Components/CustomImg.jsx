@@ -1,8 +1,8 @@
 import React from 'react'
 
-const CustomImg = ({img, name ,id}) => (
+const CustomImg = ({img, name ,id, clase}) => (
   <div>
-    <img src={img} alt={name} id={id} />
+    <img src={img} alt={name} id={id} className={clase} />
   </div>
 )
 

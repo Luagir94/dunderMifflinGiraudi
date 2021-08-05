@@ -1,0 +1,48 @@
+.footer{
+    display: flex;
+    flex-direction: row;
+    height: 5rem;
+    background-color: $mainColor;
+    margin-top: 10rem;
+    box-shadow: 0rem -0.5rem 3rem $mainColor;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    p{
+        color: white;
+        font-size: 1rem;
+        margin: 0.1rem auto auto auto;
+    }
+    div{
+        margin: auto;
+        ul{
+            
+            display: flex;
+            li{list-style: none;
+                margin: 0 2rem auto 2rem;
+                a{
+                    margin: 0 2rem 0rem 2rem;;
+                    color: white
+                }
+            }
+        }
+        
+    }
+    ;
+    img{
+        width: 3rem;
+        color: white;
+        margin-top:-0.5rem;
+    }
+
+    #footerNavigation{
+        margin-left: 9rem;
+            li{
+                margin: 1.5rem 0 2rem 0;
+            }
+        }
+    }
+
+
+

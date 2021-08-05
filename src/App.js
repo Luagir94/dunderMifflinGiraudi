@@ -1,6 +1,5 @@
 import './App.css';
 import React, { useState } from 'react';
-import NavBar from './Components/NavBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   BrowserRouter as Router,
@@ -8,19 +7,27 @@ import {
   Route,
   Link
 } from "react-router-dom";
+
+
+///Navigation
+import NavBar from './Components/NavBar';
+import Footer from './Components/FooterNav';
+
+
 ///Pages
-import Contact from "./Pages/Contact";
 import Home from "./Pages/Home";
 import Products from "./Pages/Products";
-import About from "./Pages/About";
 import Cart from "./Pages/Cart";
 import Error404 from "./Pages/Error404";
 import ItemDetail from "./Pages/ItemDetail";
-import ItemCategory from "./Pages/ItemCategory"
+import ItemCategory from "./Pages/ItemCategory";
+
+
 
 
 //Context 
 import {CartProvider} from "./Contexts/CartContext"
+
 
 
 function App() {
@@ -30,16 +37,21 @@ function App() {
     <div className="App">
       <Router>
         <NavBar/>
+        <div>
+          <div>
+            
+          </div>
         <Switch>
           <Route  exact path="/" component={Home}/>
           <Route  exact path="/products" component={Products}/>
           <Route  exact path="/products/:productId" component={ItemDetail}/>
           <Route  exact path="/category/:categoryId" component={ItemCategory}/>
-          <Route  exact path="/about" component={About}/>
-          <Route  exact path="/contact" component={Contact}/>
           <Route  exact path="/cart" component={Cart}/>
           <Route  path="*" component={Error404}/>
         </Switch>
+        </div>
+
+        <Footer/>
       </Router>
       <header className="App-header">
       </header>

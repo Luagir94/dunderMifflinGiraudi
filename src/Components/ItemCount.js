@@ -6,7 +6,8 @@ import AlarmIcon from '@material-ui/icons/Alarm';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import Button from '@material-ui/core/Button';
 import CartWidget from './CartWidget';
-import CartContext from "../Contexts/CartContext"   
+import CartContext from "../Contexts/CartContext"  ;
+import Modal from 'react-bootstrap/Modal'
 
 
 
@@ -34,9 +35,15 @@ export function OnAdd() {
 
 export default function ItemCount ({stock,initialValue,id,price,quantity,item}) {
     const classes = useStyles();
-    const {setQuantityToAdd,addToCart,cartItems} = useContext(CartContext)
+    const {setQuantityToAdd,addToCart,cartItems,name} = useContext(CartContext)
     const [count, setCount] = useState(0)
-    
+    const [showCart, setShowCart] = useState(false);
+    const [showStock, setShowStock] = useState(false);
+
+    const handleCloseCart = () => setShowCart(false);
+    const handleShowCart = () => setShowCart(true);
+    const handleCloseStock = () => setShowStock(false);
+    const handleShowStock = () => setShowStock(true);
 
     const agregarCarrito = () => {
         addToCart(item,id,count,price);
@@ -45,17 +52,18 @@ export default function ItemCount ({stock,initialValue,id,price,quantity,item}) 
         
         
     }
-    
+
 return (
+    <>
     <div className={classes.root} > 
     <div id='counter'>
         <span className='buttonCount'>
         <Button variant="outlined" color="primary"  onClick={ () => {
             if (stock > 1 &&  count < stock) {setCount(count+1)
-                
+        
             }
         else {
-            alert('No hay mas Stock de ese Producto')
+            handleShowStock()
         }
         }}> + </Button>
         </span>
@@ -64,14 +72,43 @@ return (
         <Button variant="outlined" color="primary" className='buttonCount' onClick={ () => {count > 0 && setCount(count - 1)}}> - </Button>
         </span>
 
-        <IconButton color="primary" aria-label="Agregar al Carrito" onClick={agregarCarrito}>
+        <IconButton color="primary" aria-label="Agregar al Carrito" onClick={()=>{
+            agregarCarrito()
+            handleShowCart()
+        }}>
+            
         
         <AddShoppingCartIcon/>
         </IconButton>
         </div>
         
     </div>
+
     
+         <Modal show={showCart} onHide={handleCloseCart}>
+        <Modal.Header >
+          <Modal.Title>Producto/s agregados al carrito!</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Se agregaron {count} {name}</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleCloseCart}>
+            Cerrar
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
+      <Modal show={showStock} onHide={handleCloseStock}>
+        <Modal.Header >
+          <Modal.Title>Lo Sentimos!</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>No queda mas stock de {name}</Modal.Body>
+        <Modal.Footer>
+        <Button variant="secondary" onClick={handleCloseStock}>
+            Cerrar
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </>
 
 )
 }

@@ -15,7 +15,7 @@ const divStyle ={
   height: '30rem',
   width: '18rem',
   margin:'2rem',
- 
+
 }
 const fontStyle={
   color:'#15384e',
@@ -46,7 +46,7 @@ export default function ItemListConteiner({name,img,stock,id,price}) {
                 />
 
 
-        <Button type="primary"  variant="outlined" color="primary" className='buttonCount' style={buttonStyle}><Link to="/products"><Link to={`/products/${id}`}>Detalle</Link></Link></Button>
+        <Button type="primary"  variant="outlined" color="primary" className='buttonCount' style={buttonStyle}><Link to="/products"><Link to={`/products/${name}`}>Detalle</Link></Link></Button>
       </div>
       
       </div>

@@ -31,13 +31,7 @@ function NavBar(){
         <NavDropdown.Item ><Link to={`/category/${office}`}>Art Oficina</Link></NavDropdown.Item>
         <NavDropdown.Item><Link to={`/category/${misc}`} >Misc</Link></NavDropdown.Item>
       </NavDropdown>
-      <Nav.Link ><Link to="/about" >Nosotros</Link></Nav.Link>
-      <Nav.Link ><Link to="/contact" >Contacto</Link></Nav.Link>
     </Nav>
-    <Form inline>
-      <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-      <Button variant="outline-success">Search</Button>
-    </Form>
     <Link to="/Cart"><CartWidget/></Link>
   </Navbar.Collapse>
 </Navbar>
