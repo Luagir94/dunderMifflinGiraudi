@@ -15,7 +15,7 @@ function Footer() {
         <div>
           <ul id='footerNavigation'>
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/dunderMifflinGiraudi">Home</Link>
             </li>
             <li>
               <Link to={`/products`}>Productos</Link>
