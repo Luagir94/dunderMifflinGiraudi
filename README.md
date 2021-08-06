@@ -7,6 +7,8 @@ This project was developed for the ReactJs course on the CoderHouse platform [![
 ### Demo: [Dunder Mifflin Paper Company](https://luagir94.github.io/dunderMifflinGiraudi/)
 
 [![50cee9aaa6d979abbe52706b265d5aea.png](https://i.postimg.cc/zGznLPnw/50cee9aaa6d979abbe52706b265d5aea.png)](https://postimg.cc/rKHd3jZz)
+[![c1e6252c314bf3a0c0d927f37a199fce.png](https://i.postimg.cc/8PVYYNS1/c1e6252c314bf3a0c0d927f37a199fce.png)](https://postimg.cc/WtXSFRzK)
+[![1a8cc23160235a48d7dbe87fd032d2d7.png](https://i.postimg.cc/FsWjLVG2/1a8cc23160235a48d7dbe87fd032d2d7.png)](https://postimg.cc/gnhX9RCD)
 
 ### Author
 
