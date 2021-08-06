@@ -58,6 +58,10 @@ return (
     <div className={classes.root} > 
     <div id='counter'>
         <span className='buttonCount'>
+        <Button variant="outlined" color="primary" className='buttonCount' onClick={ () => {count > 0 && setCount(count - 1)}}> - </Button>
+        </span>
+        <span >{count}</span>
+        <span className='buttonCount'>
         <Button variant="outlined" color="primary"  onClick={ () => {
             if (stock > 1 &&  count < stock) {setCount(count+1)
         
@@ -66,10 +70,7 @@ return (
             handleShowStock()
         }
         }}> + </Button>
-        </span>
-        <span >{count}</span>
-        <span className='buttonCount'>
-        <Button variant="outlined" color="primary" className='buttonCount' onClick={ () => {count > 0 && setCount(count - 1)}}> - </Button>
+        
         </span>
 
         <IconButton color="primary" aria-label="Agregar al Carrito" onClick={()=>{

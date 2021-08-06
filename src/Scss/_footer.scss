@@ -3,7 +3,7 @@
     flex-direction: row;
     height: 10rem;
     background-color: $mainColor;
-    margin-top: 5rem;
+    margin-top: 8rem;
     box-shadow: 0rem -0.5rem 3rem $mainColor;
     width: 100%;
     position: sticky;
@@ -20,6 +20,10 @@
             display: flex;
             li{list-style: none;
                 margin: 0 2rem auto 2rem;
+                display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
                 a{
                     margin: 0 2rem 0rem 2rem;;
                     color: white
@@ -33,8 +37,11 @@
         width: 3rem;
         color: white;
         margin-top:-0.5rem;
+        
     }
-
+    #tw{
+        margin-top: 0.3rem;
+    }
     #footerNavigation{
         margin-left: 9rem;
             li{

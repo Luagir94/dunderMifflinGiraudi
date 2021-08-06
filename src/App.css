@@ -10,7 +10,7 @@
   flex-direction: row;
   height: 10rem;
   background-color: #15384e;
-  margin-top: 5rem;
+  margin-top: 8rem;
   box-shadow: 0rem -0.5rem 3rem #15384e;
   width: 100%;
   position: sticky;
@@ -33,6 +33,10 @@
 .footer div ul li {
   list-style: none;
   margin: 0 2rem auto 2rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .footer div ul li a {
@@ -44,6 +48,10 @@
   width: 3rem;
   color: white;
   margin-top: -0.5rem;
+}
+
+.footer #tw {
+  margin-top: 0.3rem;
 }
 
 .footer #footerNavigation {

@@ -26,9 +26,9 @@ const buttonStyle={
 }
 
 export default function ItemListConteiner({name,img,stock,id,price}) {
-  const {cartItems,addToCart,quantityToAdd} = useContext(CartContext)
-  return (
-    <div className='card' style={divStyle}>
+  const {cartItems,addToCart} = useContext(CartContext)
+  return (<div id='card'>
+    <div className='card' style={divStyle} >
       <div className='cardContent'>
       <div>
         <img src={img} alt={name} className='cardImg'/>
@@ -50,6 +50,7 @@ export default function ItemListConteiner({name,img,stock,id,price}) {
       </div>
       
       </div>
+    </div>
     </div>
   )
 }

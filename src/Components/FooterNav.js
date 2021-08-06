@@ -26,7 +26,7 @@ function Footer() {
             <ul>
                 <li><a href="https://github.com/Luagir94"><CustomImg {...IMAGES.img5}/></a></li>
                 <li><a href="https://www.linkedin.com/in/lucianogiraudi/"><CustomImg {...IMAGES.img9}/></a></li>
-                <li><a href="https://twitter.com/luagirdev"><CustomImg {...IMAGES.img4}/></a></li>
+                <li><a id='tw' href="https://twitter.com/luagirdev"><CustomImg {...IMAGES.img4}/></a></li>
                 
             </ul>
         </div>
