@@ -36,7 +36,7 @@ export function OnAdd() {
 export default function ItemCount ({stock,initialValue,id,price,quantity,item}) {
     const classes = useStyles();
     const {setQuantityToAdd,addToCart,cartItems,name} = useContext(CartContext)
-    const [count, setCount] = useState(0)
+    const [count, setCount] = useState(1)
     const [showCart, setShowCart] = useState(false);
     const [showStock, setShowStock] = useState(false);
 
@@ -58,7 +58,7 @@ return (
     <div className={classes.root} > 
     <div id='counter'>
         <span className='buttonCount'>
-        <Button variant="outlined" color="primary" className='buttonCount' onClick={ () => {count > 0 && setCount(count - 1)}}> - </Button>
+        <Button variant="outlined" color="primary" className='buttonCount' onClick={ () => {count > 1 && setCount(count - 1)}}> - </Button>
         </span>
         <span >{count}</span>
         <span className='buttonCount'>
