@@ -1,6 +1,48 @@
-# Getting Started with Create React App
+#  DUNDER MIFFLIN INC PAPER COMPANY
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## _ECOMMERCE Project in ReactJs_ 
+
+This project was developed for the ReactJs course on the CoderHouse platform [![coderhouse](https://emprelatam.com/wp-content/uploads/2019/10/logos-coderhouse-01.png)](https://www.coderhouse.com/)
+
+### Demo: [Dunder Mifflin Paper Company](https://luagir94.github.io/dunderMifflinGiraudi/)
+
+[![50cee9aaa6d979abbe52706b265d5aea.png](https://i.postimg.cc/zGznLPnw/50cee9aaa6d979abbe52706b265d5aea.png)](https://postimg.cc/rKHd3jZz)
+[![c1e6252c314bf3a0c0d927f37a199fce.png](https://i.postimg.cc/8PVYYNS1/c1e6252c314bf3a0c0d927f37a199fce.png)](https://postimg.cc/WtXSFRzK)
+[![1a8cc23160235a48d7dbe87fd032d2d7.png](https://i.postimg.cc/FsWjLVG2/1a8cc23160235a48d7dbe87fd032d2d7.png)](https://postimg.cc/gnhX9RCD)
+
+### Author
+
+> Luciano Giraudi
+> Contact: lucianiagiraudi@gmail.com > [linkedin](https://www.linkedin.com/in/lucianogiraudi/)
+
+### Info
+
+> Camada: 14705
+> Teacher: Nicolas Restrepo
+> Tutor:  Braian Vaylet
+
+### Main libraries used in the project
+
+| library                                                          | used                      |
+| ---------------------------------------------------------------- | ------------------------- |
+| [ReactJs](https://es.reactjs.org/)                               | JavaScript framework      |
+| [Create React App](https://github.com/facebook/create-react-app) | Create React Project      |
+| [Material-UI](https://material-ui.com/)                          | UI framework              |
+| [React-Bootstrap](https://react-bootstrap.github.io)             | UI framework              |
+| [Firebase](https://firebase.google.com/?hl=es)                   | Authentication & DataBase |
+| [React Router](https://reactrouter.com/)                         | Router                    |
+
+
+### Pending tasks
+
+- Add payment gateway (mercadopago,)
+- Responsive (mobile and web)
+- Order status control (init, in progress, in trip, received)
+- move notifications and favorites to firebase
+- user registration in firebase
+- Restrict access to the administration panel (only admin user)
+
+---
 
 ## Available Scripts
 
@@ -13,6 +55,11 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
+
+### `npm run doc`
+
+generate the documentation using jsdoc in the docs folder
+Open [./docs/index.html]
 
 ### `npm test`
 
@@ -28,6 +75,12 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run deploy`
+
+To deploy the project in Github Pages
+
+Before executing this command remember to compile the project to production through `npm run build`
 
 ### `npm run eject`
 
