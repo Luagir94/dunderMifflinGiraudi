@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/dunderMifflinGiraudi/static/css/main.9bf94f82.chunk.css",
-    "main.js": "/dunderMifflinGiraudi/static/js/main.6c84fb30.chunk.js",
-    "main.js.map": "/dunderMifflinGiraudi/static/js/main.6c84fb30.chunk.js.map",
+    "main.js": "/dunderMifflinGiraudi/static/js/main.bdbedff3.chunk.js",
+    "main.js.map": "/dunderMifflinGiraudi/static/js/main.bdbedff3.chunk.js.map",
     "runtime-main.js": "/dunderMifflinGiraudi/static/js/runtime-main.6306f02c.js",
     "runtime-main.js.map": "/dunderMifflinGiraudi/static/js/runtime-main.6306f02c.js.map",
     "static/css/2.4c97ca4f.chunk.css": "/dunderMifflinGiraudi/static/css/2.4c97ca4f.chunk.css",
@@ -26,6 +26,6 @@
     "static/css/2.4c97ca4f.chunk.css",
     "static/js/2.37ae6a7f.chunk.js",
     "static/css/main.9bf94f82.chunk.css",
-    "static/js/main.6c84fb30.chunk.js"
+    "static/js/main.bdbedff3.chunk.js"
   ]
 }
